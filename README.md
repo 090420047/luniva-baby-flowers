@@ -2,17 +2,13 @@
 
 Luniva Baby & Flowers icin hazirlanan tek sayfalik web sitesi taslagidir.
 
-Canli site:
-
-```text
-https://luniva-baby-flowers.farko16cengiz.chatgpt.site
-```
-
 GitHub repo:
 
 ```text
 https://github.com/090420047/luniva-baby-flowers
 ```
+
+Canli site linki, gercek domain baglandiginda buraya eklenecek.
 
 Site su an su amaclara odaklanir:
 
