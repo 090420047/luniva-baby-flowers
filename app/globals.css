@@ -37,19 +37,6 @@ body {
   color: #ffffff;
 }
 
-.hero-section {
-  background: #fffaf8;
-}
-
-.hero-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 63% 44%;
-}
-
 .image-fill {
   position: absolute;
   inset: 0;
@@ -57,41 +44,47 @@ body {
   height: 100%;
 }
 
-.wa-icon {
+.hero-brand-panel {
   position: relative;
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  border: 2px solid currentColor;
-  border-radius: 999px;
-  color: inherit;
+  overflow: hidden;
+  border: 1px solid rgba(200, 182, 255, 0.48);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(126, 98, 166, 0.16);
 }
 
-.wa-icon::before {
+.hero-brand-panel::before {
   content: "";
   position: absolute;
-  left: 3px;
-  bottom: -4px;
-  width: 9px;
-  height: 9px;
-  border-bottom: 2px solid currentColor;
-  border-left: 2px solid currentColor;
-  transform: rotate(-22deg);
-  background: inherit;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 248, 0.08), rgba(248, 215, 230, 0.28)),
+    radial-gradient(circle at 22% 18%, rgba(190, 232, 255, 0.32), transparent 32%);
+  pointer-events: none;
 }
 
-.wa-icon::after {
-  content: "";
-  position: absolute;
-  inset: 5px 6px 6px 5px;
-  border-radius: 999px;
-  border-right: 2px solid currentColor;
-  transform: rotate(-38deg);
+.hero-brand-image {
+  display: block;
+  width: 100%;
+  height: min(66svh, 720px);
+  object-fit: contain;
+  object-position: center;
 }
 
-.wa-icon-small {
-  width: 18px;
-  height: 18px;
+.brand-detail-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(126, 98, 166, 0.14);
+}
+
+.brand-detail-image {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  object-fit: contain;
 }
 
 .instagram-mark {
@@ -138,8 +131,9 @@ body {
 }
 
 @media (max-width: 720px) {
-  .hero-image {
-    object-position: 56% 44%;
+  .hero-brand-image {
+    height: auto;
+    min-height: 0;
   }
 
   .floating-whatsapp {

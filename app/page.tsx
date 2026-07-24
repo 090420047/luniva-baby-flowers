@@ -8,61 +8,78 @@ const instagramHref = "https://www.instagram.com/lunivababyflowers/";
 const featuredWorks = [
   {
     title: "Mavi kuğulu bebek aranjmanı",
-    text: "Hoşgeldin Bebek yazılı, çiçek detaylı ve ayıcık figürlü tasarım.",
-    image: "/luniva/blue-swan-detail.png",
+    text: "Ayıcık figürü, beyaz çiçekler ve Hoşgeldin Bebek yazısıyla hazır hediye.",
+    image: "/luniva/blue-swan-detail-clean.png",
     alt: "Mavi detaylı Hoşgeldin Bebek kuğu aranjmanı",
-  },
-  {
-    title: "Aile hediye çekimi",
-    text: "Yeni bebek hediyesini aileyle birlikte gösteren sıcak sunum.",
-    image: "/luniva/family-gift.png",
-    alt: "Ailenin Luniva bebek aranjmanını tuttuğu görsel",
-  },
-  {
-    title: "Oda dekorlu sunum",
-    text: "Bebek odası atmosferinde ürünün gerçek kullanım hissi.",
-    image: "/luniva/blue-swan-room.png",
-    alt: "Bebek odasında mavi kuğulu Hoşgeldin Bebek aranjmanı",
+    position: "center center",
   },
   {
     title: "Lila çiçekli tasarım",
-    text: "Kız bebekler için lila çiçekler ve yumuşak oda tonları.",
-    image: "/luniva/purple-swan-room.png",
+    text: "Lila çiçekler ve yumuşak bebek odası tonlarıyla nazik bir seçenek.",
+    image: "/luniva/purple-swan-room-clean.png",
     alt: "Lila çiçekli kuğu formunda Hoşgeldin Bebek aranjmanı",
+    position: "center center",
+  },
+  {
+    title: "Bebek odası sunumu",
+    text: "Ürünün oda içinde nasıl durduğunu gösteren sade ve sıcak görünüm.",
+    image: "/luniva/blue-swan-room-clean.png",
+    alt: "Bebek odasında mavi kuğulu Hoşgeldin Bebek aranjmanı",
+    position: "center center",
+  },
+  {
+    title: "Hediye teslim anı",
+    text: "Aileye verilecek hediyenin eldeki boyutunu ve hissini gösteren sunum.",
+    image: "/luniva/family-gift.png",
+    alt: "Ailenin Luniva bebek aranjmanını tuttuğu görsel",
+    position: "center top",
   },
 ];
 
 const orderSteps = [
   {
     value: "01",
-    title: "Model seçilir",
-    text: "Hazır işler arasından ürün tipi, renk ve yazı stili belirlenir.",
+    title: "Modeli seç",
+    text: "Beğendiğin kuğu, çiçek ve ayıcık temasını WhatsApp'ta gönder.",
   },
   {
     value: "02",
-    title: "Detaylar yazılır",
-    text: "İsim, teslim günü, çiçek tonu ve özel not WhatsApp üzerinden alınır.",
+    title: "Kişiselleştir",
+    text: "Bebek adı, renk tonu, teslim günü ve özel not birlikte netleşir.",
   },
   {
     value: "03",
-    title: "Sipariş onaylanır",
-    text: "Fiyat, teslim ve hazırlık süresi görüşmede netleşir.",
+    title: "Onayla",
+    text: "Fiyat, hazırlık süresi ve teslim detayı konuşmada hızlıca tamamlanır.",
   },
 ];
 
 const serviceCards = [
-  "Hoşgeldin Bebek aranjmanları",
-  "Hastane odası hediyelikleri",
-  "Kuğu ve ayıcık temalı ürünler",
-  "Çiçekli masa ve oda süsleri",
-  "Kişiye özel isim ve renk seçimi",
-  "Instagram için ürün çekimi",
+  "Hoşgeldin Bebek hediyesi",
+  "Kız ve erkek bebek renkleri",
+  "Kişiye özel isim yazısı",
+  "Çiçek ve figür seçimi",
+  "Hastane odası sunumu",
+  "Instagram vitrini için çekim",
 ];
+
+function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      fill="currentColor"
+    >
+      <path d="M16.02 3.2A12.67 12.67 0 0 0 5.12 22.3L3.8 28.8l6.66-1.56A12.66 12.66 0 1 0 16.02 3.2Zm0 2.35a10.31 10.31 0 0 1 8.6 16.02 10.3 10.3 0 0 1-12.96 3.26l-.44-.23-3.88.91.77-3.79-.28-.47a10.31 10.31 0 0 1 8.19-15.7Zm-4.4 5.44c-.24 0-.63.09-.96.45-.32.36-1.25 1.22-1.25 2.98s1.28 3.46 1.46 3.7c.18.24 2.5 4 6.2 5.45 3.07 1.2 3.7.96 4.36.9.67-.06 2.16-.88 2.47-1.73.3-.85.3-1.58.21-1.73-.09-.15-.33-.24-.7-.42-.36-.18-2.15-1.06-2.49-1.18-.33-.12-.57-.18-.81.18-.24.36-.93 1.18-1.14 1.42-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.79-1.07-.95-1.8-2.13-2.01-2.49-.21-.36-.02-.56.16-.74.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.82-1.98-1.12-2.7-.29-.7-.59-.61-.81-.62l-.76-.01Z" />
+    </svg>
+  );
+}
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#fffaf8] text-[#2d2430]">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/55 bg-[#fffaf8]/86 backdrop-blur-xl">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/70 bg-[#fffaf8]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#anasayfa" className="flex items-center gap-3">
             <span className="grid h-11 w-11 place-items-center rounded-lg bg-[#c8b6ff] font-serif text-2xl font-bold text-white shadow-sm">
@@ -82,8 +99,8 @@ export default function Home() {
             aria-label="Ana menü"
             className="hidden items-center gap-7 text-sm font-semibold text-[#665766] lg:flex"
           >
-            <a href="#islerimiz" className="transition hover:text-[#8f6bb8]">
-              İşlerimiz
+            <a href="#modeller" className="transition hover:text-[#8f6bb8]">
+              Modeller
             </a>
             <a href="#siparis" className="transition hover:text-[#8f6bb8]">
               Sipariş
@@ -102,30 +119,24 @@ export default function Home() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg bg-[#25d366] px-4 py-3 text-sm font-black text-white shadow-lg shadow-[#25d366]/20 transition hover:-translate-y-0.5 hover:bg-[#1fbd5b]"
           >
-            <span className="wa-icon wa-icon-small" aria-hidden="true" />
+            <WhatsAppIcon className="h-5 w-5" />
             WhatsApp
           </a>
         </div>
       </header>
 
-      <section id="anasayfa" className="hero-section relative isolate overflow-hidden">
-        <img
-          src="/luniva/family-gift.png"
-          alt="Luniva Baby & Flowers Hoşgeldin Bebek aranjmanı"
-          className="hero-image"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,250,248,0.96)_0%,rgba(255,250,248,0.76)_42%,rgba(255,250,248,0.2)_100%)]" />
-        <div className="relative mx-auto flex min-h-[88svh] max-w-7xl items-end px-5 pb-16 pt-32 lg:px-8 lg:pb-20">
-          <div className="max-w-2xl">
-            <p className="mb-5 text-sm font-black uppercase tracking-[0.28em] text-[#b78296]">
-              Bebek hediyelikleri ve çiçek tasarımları
+      <section id="anasayfa" className="relative overflow-hidden pt-28">
+        <div className="mx-auto grid min-h-[calc(100svh-7rem)] max-w-7xl items-center gap-10 px-5 pb-14 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <div className="relative z-10 max-w-xl">
+            <p className="mb-5 text-sm font-black uppercase tracking-[0.26em] text-[#b78296]">
+              Kişiye özel bebek hediyelikleri
             </p>
-            <h1 className="font-serif text-5xl font-semibold leading-[0.96] text-[#7e62a6] sm:text-6xl lg:text-7xl">
+            <h1 className="font-serif text-5xl font-semibold leading-[0.95] text-[#7e62a6] sm:text-6xl lg:text-7xl">
               Luniva Baby & Flowers
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-[#574b57]">
-              Hoşgeldin Bebek aranjmanları, çiçekli kuğu tasarımları ve kişiye
-              özel hediye sunumları WhatsApp üzerinden hazırlanır.
+            <p className="mt-6 text-lg leading-8 text-[#574b57]">
+              Bebeğe özel isim, renk ve çiçek detaylarıyla hazırlanan
+              Hoşgeldin Bebek aranjmanları için WhatsApp'tan hızlıca yaz.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -134,42 +145,49 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#25d366] px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white shadow-xl shadow-[#25d366]/25 transition hover:-translate-y-1"
               >
-                <span className="wa-icon" aria-hidden="true" />
-                Sipariş Ver
+                <WhatsAppIcon className="h-5 w-5" />
+                Siparişe Başla
               </a>
               <a
-                href="#islerimiz"
-                className="inline-flex items-center justify-center rounded-lg border border-[#c8b6ff]/70 bg-white/78 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-[#7e62a6] transition hover:-translate-y-1 hover:bg-white"
+                href="#modeller"
+                className="inline-flex items-center justify-center rounded-lg border border-[#c8b6ff]/70 bg-white px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-[#7e62a6] transition hover:-translate-y-1"
               >
-                İşleri Gör
+                Modelleri İncele
               </a>
             </div>
+          </div>
+
+          <div className="hero-brand-panel">
+            <img
+              src="/luniva/brand-hero.png"
+              alt="Luniva Baby marka görseli"
+              className="hero-brand-image"
+            />
           </div>
         </div>
       </section>
 
       <section className="border-y border-[#eadfea] bg-white py-5">
-        <div className="mx-auto grid max-w-7xl gap-3 px-5 text-center text-xs font-black uppercase tracking-[0.18em] text-[#8a778a] sm:grid-cols-3 lg:px-8">
-          <span>Özel isim ve renk</span>
-          <span>WhatsApp sipariş</span>
-          <span>Instagram vitrini</span>
+        <div className="mx-auto grid max-w-7xl gap-3 px-5 text-center text-xs font-black uppercase tracking-[0.16em] text-[#8a778a] sm:grid-cols-3 lg:px-8">
+          <span>Modeli seç</span>
+          <span>İsim ve rengi yaz</span>
+          <span>WhatsApp'tan onayla</span>
         </div>
       </section>
 
-      <section id="islerimiz" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+      <section id="modeller" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="mb-9 grid gap-5 lg:grid-cols-[0.78fr_1fr] lg:items-end">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-[#b78296]">
-              İşlerimiz
+            <p className="text-sm font-black uppercase tracking-[0.26em] text-[#b78296]">
+              Popüler modeller
             </p>
             <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-[#7e62a6] lg:text-5xl">
-              Bebek odasına yakışan yumuşak, çiçekli sunumlar.
+              Beğendiğin tasarımı seç, detayları birlikte netleştirelim.
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-7 text-[#645864]">
-            Site, müşterinin önce gerçek ürünleri görmesini sağlar. Her görsel
-            sipariş görüşmesine bağlanacak şekilde sade bir vitrin olarak
-            tasarlandı.
+            Görseller ürün hissini temiz gösterecek şekilde kırpıldı. Müşteri,
+            screenshot değil hazırlanmış bir vitrin gördüğünü hissetsin.
           </p>
         </div>
 
@@ -184,15 +202,25 @@ export default function Home() {
                   src={work.image}
                   alt={work.alt}
                   className="image-fill object-cover transition duration-500 group-hover:scale-[1.03]"
+                  style={{ objectPosition: work.position }}
                 />
               </div>
               <div className="p-5">
                 <h3 className="font-serif text-2xl font-semibold text-[#514153]">
                   {work.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-[#6d616d]">
+                <p className="mt-2 min-h-18 text-sm leading-6 text-[#6d616d]">
                   {work.text}
                 </p>
+                <a
+                  href={`${whatsappHref}%20${encodeURIComponent(work.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#f8d7e6] px-4 py-3 text-sm font-black text-[#7e4f69] transition hover:bg-[#f1bfd6]"
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
+                  Bu modeli sor
+                </a>
               </div>
             </article>
           ))}
@@ -200,30 +228,30 @@ export default function Home() {
       </section>
 
       <section className="bg-[#f7eef5] py-16">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
-          <div className="relative aspect-[1.05/1] overflow-hidden rounded-lg bg-white shadow-xl shadow-[#c8b6ff]/20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:px-8">
+          <div className="brand-detail-frame">
             <img
-              src="/luniva/logo-board.png"
-              alt="Luniva Baby marka renkleri ve logo çalışması"
-              className="image-fill object-cover"
+              src="/luniva/brand-hero.png"
+              alt="Luniva Baby logo ve renk paleti"
+              className="brand-detail-image"
             />
           </div>
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-[#b78296]">
-              Marka dili
+            <p className="text-sm font-black uppercase tracking-[0.26em] text-[#b78296]">
+              Sana özel hazırlanır
             </p>
             <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-[#7e62a6] lg:text-5xl">
-              Lavanta, pembe, mavi ve krem tonlarıyla nazik bir bebek markası.
+              Hediye seçimi kolay, sipariş konuşması net.
             </h2>
             <p className="mt-5 text-base leading-8 text-[#5f535f]">
-              Luniva’nın mevcut logo hissi korunarak daha temiz, mobilde hızlı
-              taranan ve doğrudan siparişe götüren bir web düzeni kuruldu.
+              Ürünü seçen kişi önce ne alacağını görür; isim, renk, teslim ve
+              not bilgilerini tek WhatsApp konuşmasında tamamlar.
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {serviceCards.map((service) => (
                 <div
                   key={service}
-                  className="rounded-lg border border-white bg-white/72 px-4 py-3 text-sm font-bold text-[#5b4f5c]"
+                  className="rounded-lg border border-white bg-white/75 px-4 py-3 text-sm font-bold text-[#5b4f5c]"
                 >
                   {service}
                 </div>
@@ -235,11 +263,11 @@ export default function Home() {
 
       <section id="siparis" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="mb-9 max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-[0.28em] text-[#b78296]">
+          <p className="text-sm font-black uppercase tracking-[0.26em] text-[#b78296]">
             Sipariş akışı
           </p>
           <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-[#7e62a6] lg:text-5xl">
-            Müşteri ürünü görür, WhatsApp’tan hızlıca konuşmaya geçer.
+            Üç adımda ne istediğini anlat, kalanını Luniva hazırlasın.
           </h2>
         </div>
 
@@ -265,12 +293,11 @@ export default function Home() {
         <div className="mt-9 grid gap-6 border-t border-[#eadfea] pt-9 lg:grid-cols-[1fr_0.85fr] lg:items-center">
           <div>
             <h3 className="font-serif text-3xl font-semibold text-[#7e62a6]">
-              Hazır mesajla sipariş konuşması başlatılır.
+              Hazır mesajla konuşmayı başlat.
             </h3>
             <p className="mt-3 text-base leading-7 text-[#5f535f]">
-              WhatsApp bağlantısına ürün adı, renk, isim ve teslim tarihi
-              bilgileri eklenebilir. Numara kesinleşince tüm butonlar aynı
-              hatta yönlenir.
+              WhatsApp butonu müşteriyi direkt sipariş konuşmasına götürür.
+              Gerçek telefon numarası eklendiğinde tüm butonlar aynı hatta çalışır.
             </p>
           </div>
           <a
@@ -279,8 +306,8 @@ export default function Home() {
             rel="noopener noreferrer"
             className="inline-flex w-full items-center justify-center gap-3 rounded-lg bg-[#25d366] px-7 py-5 text-sm font-black uppercase tracking-[0.16em] text-white shadow-xl shadow-[#25d366]/20 transition hover:-translate-y-1 lg:w-auto"
           >
-            <span className="wa-icon" aria-hidden="true" />
-            WhatsApp’tan Yaz
+            <WhatsAppIcon className="h-5 w-5" />
+            WhatsApp'tan Yaz
           </a>
         </div>
       </section>
@@ -288,26 +315,24 @@ export default function Home() {
       <section id="instagram" className="bg-[#e9f7ff] py-16">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[0.78fr_1fr] lg:items-center lg:px-8">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-[#7aa7c8]">
+            <p className="text-sm font-black uppercase tracking-[0.26em] text-[#7aa7c8]">
               Instagram ve sponsorlu tanıtım
             </p>
             <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-[#486f8a] lg:text-5xl">
-              Ürün fotoğrafları sosyal akışa taşınır, reklam bütçesi sonradan
-              bağlanır.
+              İlk bakışta marka, sonra ürün, en sonda sipariş.
             </h2>
             <p className="mt-5 text-base leading-8 text-[#4f6573]">
-              Instagram hesabı açıldığında ürün gönderileri, Reels kapakları ve
-              sponsorlu tanıtımlar aynı görsel dilde ilerler. Reklam kartı
-              tanımlandığında bütçe bu kanaldan yönetilir.
+              Instagram hesabı açıldığında aynı görsel dilde ürün gönderileri,
+              Reels kapakları ve sponsorlu tanıtım içerikleri hazırlanabilir.
             </p>
             <a
               href={instagramHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center gap-3 rounded-lg bg-[#ffffff] px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-[#486f8a] shadow-lg shadow-[#7aa7c8]/15 transition hover:-translate-y-1"
+              className="mt-7 inline-flex items-center gap-3 rounded-lg bg-white px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-[#486f8a] shadow-lg shadow-[#7aa7c8]/15 transition hover:-translate-y-1"
             >
               <span className="instagram-mark" aria-hidden="true" />
-              Instagram’a Git
+              Instagram'a Git
             </a>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
@@ -333,11 +358,11 @@ export default function Home() {
       <section id="iletisim" className="bg-[#2d2430] py-14 text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-7 px-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-[#f8d7e6]">
+            <p className="text-sm font-black uppercase tracking-[0.26em] text-[#f8d7e6]">
               Luniva Baby & Flowers
             </p>
             <h2 className="mt-3 font-serif text-4xl font-semibold">
-              Yeni siparişler WhatsApp’tan alınır.
+              Beğendiğin modeli WhatsApp'tan gönder.
             </h2>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -347,7 +372,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#25d366] px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white"
             >
-              <span className="wa-icon" aria-hidden="true" />
+              <WhatsAppIcon className="h-5 w-5" />
               WhatsApp
             </a>
             <a
@@ -371,7 +396,7 @@ export default function Home() {
         aria-label="WhatsApp üzerinden sipariş ver"
         title="WhatsApp üzerinden sipariş ver"
       >
-        <span className="wa-icon" aria-hidden="true" />
+        <WhatsAppIcon className="h-7 w-7" />
       </a>
     </main>
   );
