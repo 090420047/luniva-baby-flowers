@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const whatsappNumber = "905555555555";
 const whatsappMessage = encodeURIComponent(
   "Merhaba Luniva Baby & Flowers, sipariş vermek istiyorum."
@@ -111,12 +109,9 @@ export default function Home() {
       </header>
 
       <section id="anasayfa" className="hero-section relative isolate overflow-hidden">
-        <Image
+        <img
           src="/luniva/family-gift.png"
           alt="Luniva Baby & Flowers Hoşgeldin Bebek aranjmanı"
-          fill
-          priority
-          sizes="100vw"
           className="hero-image"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,250,248,0.96)_0%,rgba(255,250,248,0.76)_42%,rgba(255,250,248,0.2)_100%)]" />
@@ -185,12 +180,10 @@ export default function Home() {
               className="group overflow-hidden rounded-lg border border-[#eadfea] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#c8b6ff]/18"
             >
               <div className="relative aspect-[4/5] bg-[#f7eef5]">
-                <Image
+                <img
                   src={work.image}
                   alt={work.alt}
-                  fill
-                  sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                  className="image-fill object-cover transition duration-500 group-hover:scale-[1.03]"
                 />
               </div>
               <div className="p-5">
@@ -209,12 +202,10 @@ export default function Home() {
       <section className="bg-[#f7eef5] py-16">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
           <div className="relative aspect-[1.05/1] overflow-hidden rounded-lg bg-white shadow-xl shadow-[#c8b6ff]/20">
-            <Image
+            <img
               src="/luniva/logo-board.png"
               alt="Luniva Baby marka renkleri ve logo çalışması"
-              fill
-              sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover"
+              className="image-fill object-cover"
             />
           </div>
           <div>
