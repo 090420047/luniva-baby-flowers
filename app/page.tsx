@@ -8,28 +8,28 @@ const instagramNotice = "Instagram hesabı açıldığında kullanıcı adı bur
 const featuredWorks = [
   {
     title: "Mavi kuğulu bebek aranjmanı",
-    text: "Ayıcık figürü, beyaz çiçekler ve Hoşgeldin Bebek yazısıyla hazır hediye.",
+    text: "Yeni doğan ziyaretine götürülebilecek, isme ve renge göre kişiselleştirilen zarif bir model.",
     image: "/luniva/blue-swan-detail-clean.png",
     alt: "Mavi detaylı Hoşgeldin Bebek kuğu aranjmanı",
     position: "center center",
   },
   {
     title: "Lila çiçekli tasarım",
-    text: "Lila çiçekler ve yumuşak bebek odası tonlarıyla nazik bir seçenek.",
+    text: "Daha sakin ve tatlı bir görünüm isteyenler için lila çiçeklerle hazırlanan yumuşak tonlu seçenek.",
     image: "/luniva/purple-swan-room-clean.png",
     alt: "Lila çiçekli kuğu formunda Hoşgeldin Bebek aranjmanı",
     position: "center center",
   },
   {
     title: "Bebek odası sunumu",
-    text: "Ürünün oda içinde nasıl durduğunu gösteren sade ve sıcak görünüm.",
+    text: "Bebek odasında şık duran, fotoğraflarda temiz görünen sade ve sıcak hediye alternatifi.",
     image: "/luniva/blue-swan-room-clean.png",
     alt: "Bebek odasında mavi kuğulu Hoşgeldin Bebek aranjmanı",
     position: "center center",
   },
   {
-    title: "Hediye teslim anı",
-    text: "Aileye verilecek hediyenin eldeki boyutunu ve hissini gösteren sunum.",
+    title: "Aileye hediye sunumu",
+    text: "Elde taşındığında dolu ve özenli görünen, hatıra fotoğrafına yakışan gösterişli sunum.",
     image: "/luniva/family-gift.png",
     alt: "Ailenin Luniva bebek aranjmanını tuttuğu görsel",
     position: "center top",
