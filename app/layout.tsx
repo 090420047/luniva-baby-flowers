@@ -24,21 +24,21 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: [
         {
-          url: "/favicon.ico?v=4",
+          url: "/favicon.ico?v=5",
           sizes: "any",
         },
         {
-          url: "/favicon.svg?v=4",
+          url: "/favicon.svg?v=5",
           type: "image/svg+xml",
         },
         {
-          url: "/favicon.png?v=4",
+          url: "/favicon.png?v=5",
           sizes: "512x512",
           type: "image/png",
         },
       ],
-      shortcut: "/favicon.ico?v=4",
-      apple: "/favicon.png?v=4",
+      shortcut: "/favicon.ico?v=5",
+      apple: "/favicon.png?v=5",
     },
     openGraph: {
       title: "Luniva Baby & Flowers",
