@@ -17,9 +17,9 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Luniva Baby & Flowers için bebek hediyelikleri, çiçekli aranjmanlar, WhatsApp sipariş ve Instagram vitrini.",
     icons: {
-      icon: "/luniva/logo-board.png",
-      shortcut: "/luniva/logo-board.png",
-      apple: "/luniva/logo-board.png",
+      icon: "/luniva/moon-bear-mark.png",
+      shortcut: "/luniva/moon-bear-mark.png",
+      apple: "/luniva/moon-bear-mark.png",
     },
     openGraph: {
       title: "Luniva Baby & Flowers",

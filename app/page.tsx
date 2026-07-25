@@ -3,7 +3,7 @@ const whatsappMessage = encodeURIComponent(
   "Merhaba Luniva Baby & Flowers, sipariş vermek istiyorum."
 );
 const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-const instagramHref = "https://www.instagram.com/lunivababyflowers/";
+const instagramNotice = "Instagram hesabı açıldığında kullanıcı adı buraya eklenecek.";
 
 const featuredWorks = [
   {
@@ -60,7 +60,7 @@ const serviceCards = [
   "Kişiye özel isim yazısı",
   "Çiçek ve figür seçimi",
   "Hastane odası sunumu",
-  "Instagram vitrini için çekim",
+  "Instagram açılış görselleri",
 ];
 
 function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
@@ -82,8 +82,12 @@ export default function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/70 bg-[#fffaf8]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#anasayfa" className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-lg bg-[#c8b6ff] font-serif text-2xl font-bold text-white shadow-sm">
-              L
+            <span className="grid h-12 w-12 overflow-hidden rounded-lg border border-[#eadfea] bg-white shadow-sm">
+              <img
+                src="/luniva/moon-bear-mark.png"
+                alt=""
+                className="h-full w-full object-cover"
+              />
             </span>
             <span>
               <span className="block font-serif text-xl font-semibold leading-5 text-[#7e62a6]">
@@ -159,8 +163,8 @@ export default function Home() {
 
           <div className="hero-brand-panel">
             <img
-              src="/luniva/brand-hero.png"
-              alt="Luniva Baby marka görseli"
+              src="/luniva/moon-bear-logo.png"
+              alt="Luniva Baby ay ve ayıcık logosu"
               className="hero-brand-image"
             />
           </div>
@@ -186,8 +190,8 @@ export default function Home() {
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-7 text-[#645864]">
-            Görseller ürün hissini temiz gösterecek şekilde kırpıldı. Müşteri,
-            screenshot değil hazırlanmış bir vitrin gördüğünü hissetsin.
+            Her model, hediye seçimini kolaylaştıracak şekilde ürünün formunu,
+            rengini ve odadaki duruşunu gösterir.
           </p>
         </div>
 
@@ -231,8 +235,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:px-8">
           <div className="brand-detail-frame">
             <img
-              src="/luniva/brand-hero.png"
-              alt="Luniva Baby logo ve renk paleti"
+              src="/luniva/moon-bear-logo.png"
+              alt="Luniva Baby ay ve ayıcık logosu"
               className="brand-detail-image"
             />
           </div>
@@ -322,18 +326,17 @@ export default function Home() {
               İlk bakışta marka, sonra ürün, en sonda sipariş.
             </h2>
             <p className="mt-5 text-base leading-8 text-[#4f6573]">
-              Instagram hesabı açıldığında aynı görsel dilde ürün gönderileri,
-              Reels kapakları ve sponsorlu tanıtım içerikleri hazırlanabilir.
+              {instagramNotice} Açılışta aynı görsel dilde ürün gönderileri,
+              Reels kapakları ve sponsorlu tanıtım içerikleri hazırlanır.
             </p>
-            <a
-              href={instagramHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center gap-3 rounded-lg bg-white px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-[#486f8a] shadow-lg shadow-[#7aa7c8]/15 transition hover:-translate-y-1"
+            <span
+              className="mt-7 inline-flex items-center gap-3 rounded-lg bg-white px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-[#486f8a] shadow-lg shadow-[#7aa7c8]/15"
+              aria-disabled="true"
+              title={instagramNotice}
             >
               <span className="instagram-mark" aria-hidden="true" />
-              Instagram'a Git
-            </a>
+              Instagram Yakında
+            </span>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             {["Vitrin gönderileri", "Reels kapakları", "Sponsorlu tanıtım"].map(
@@ -375,15 +378,14 @@ export default function Home() {
               <WhatsAppIcon className="h-5 w-5" />
               WhatsApp
             </a>
-            <a
-              href={instagramHref}
-              target="_blank"
-              rel="noopener noreferrer"
+            <span
               className="inline-flex items-center justify-center gap-3 rounded-lg border border-white/20 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white"
+              aria-disabled="true"
+              title={instagramNotice}
             >
               <span className="instagram-mark" aria-hidden="true" />
-              Instagram
-            </a>
+              Instagram Yakında
+            </span>
           </div>
         </div>
       </section>
