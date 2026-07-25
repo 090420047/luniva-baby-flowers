@@ -8,7 +8,12 @@ export async function generateMetadata(): Promise<Metadata> {
     headerList.get("x-forwarded-host") ??
     headerList.get("host") ??
     "localhost:3000";
-  const protocol = headerList.get("x-forwarded-proto") ?? "https";
+  const isLocalHost =
+    host.startsWith("localhost") ||
+    host.startsWith("127.0.0.1") ||
+    host.startsWith("[::1]");
+  const protocol =
+    headerList.get("x-forwarded-proto") ?? (isLocalHost ? "http" : "https");
   const origin = `${protocol}://${host}`;
 
   return {
@@ -19,13 +24,17 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: [
         {
-          url: "/favicon.png",
+          url: "/favicon.ico?v=2",
+          sizes: "any",
+        },
+        {
+          url: "/favicon.png?v=2",
           sizes: "512x512",
           type: "image/png",
         },
       ],
-      shortcut: "/favicon.png",
-      apple: "/favicon.png",
+      shortcut: "/favicon.ico?v=2",
+      apple: "/favicon.png?v=2",
     },
     openGraph: {
       title: "Luniva Baby & Flowers",
