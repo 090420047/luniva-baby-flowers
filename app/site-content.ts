@@ -34,7 +34,6 @@ export const footerColumns = [
     links: [
       { label: "Hakkımızda", href: "/hakkimizda" },
       { label: "Sık Sorulan Sorular", href: "/sik-sorulan-sorular" },
-      { label: "Müşteri Yorumları", href: "/musteri-yorumlari" },
       { label: "Instagram", href: "/instagram" },
       { label: "İletişim", href: "/iletisim" },
     ],
@@ -247,28 +246,6 @@ export const infoPages = {
         title: "Fiyat nasıl öğrenilir?",
         body: [
           "Fiyat; model, boyut, çiçek yoğunluğu ve teslimat bilgisine göre WhatsApp görüşmesinde paylaşılır.",
-        ],
-      },
-    ],
-  },
-  "musteri-yorumlari": {
-    slug: "musteri-yorumlari",
-    eyebrow: "Kurumsal",
-    title: "Müşteri Yorumları",
-    intro:
-      "Gerçek siparişlerden sonra müşteri yorumları ve teslim edilen ürün fotoğrafları bu sayfada paylaşılabilir.",
-    sections: [
-      {
-        title: "Yorum politikası",
-        body: [
-          "Yorumlar yalnızca müşteri izniyle ve kişisel bilgi paylaşmadan yayınlanmalıdır.",
-          "Bebek adı, adres veya telefon gibi özel bilgiler açık şekilde gösterilmez.",
-        ],
-      },
-      {
-        title: "Canlı yayın öncesi",
-        body: [
-          "İlk gerçek siparişler tamamlandığında bu alan güven veren müşteri geri bildirimleriyle doldurulacaktır.",
         ],
       },
     ],
