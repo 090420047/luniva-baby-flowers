@@ -1,9 +1,8 @@
-const whatsappNumber = "905555555555";
-const whatsappMessage = encodeURIComponent(
-  "Merhaba Luniva Baby & Flowers, sipariş vermek istiyorum."
-);
-const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-const instagramNotice = "Instagram hesabı açıldığında kullanıcı adı buraya eklenecek.";
+import { instagramNotice, trustItems, whatsappHref } from "./site-content";
+import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
+import { SiteFooter } from "./components/SiteFooter";
+import { SiteHeader } from "./components/SiteHeader";
+import { WhatsAppIcon } from "./components/WhatsAppIcon";
 
 const featuredWorks = [
   {
@@ -63,103 +62,10 @@ const serviceCards = [
   "Instagram açılış görselleri",
 ];
 
-const footerColumns = [
-  {
-    title: "Ürün Kategorileri",
-    links: [
-      { label: "Hoşgeldin Bebek Aranjmanları" },
-      { label: "İsme Özel Bebek Kapı Süsleri" },
-      { label: "Bebek Hediyelikler" },
-      { label: "Çiçekli Bebek Hediyeleri" },
-      { label: "Hastane Odası Süsleri" },
-    ],
-  },
-  {
-    title: "Kurumsal",
-    links: [
-      { label: "Hakkımızda" },
-      { label: "Sık Sorulan Sorular" },
-      { label: "Müşteri Yorumları" },
-      { label: "Instagram", href: "#instagram" },
-      { label: "İletişim", href: "#iletisim" },
-    ],
-  },
-  {
-    title: "Bilgilendirme",
-    links: [
-      { label: "Sipariş ve Teslimat", href: "#siparis" },
-      { label: "İptal / İade Bilgileri" },
-      { label: "Gizlilik ve KVKK" },
-      { label: "Mesafeli Satış Bilgilendirmesi" },
-    ],
-  },
-];
-
-function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 32 32"
-      aria-hidden="true"
-      fill="currentColor"
-    >
-      <path d="M16.02 3.2A12.67 12.67 0 0 0 5.12 22.3L3.8 28.8l6.66-1.56A12.66 12.66 0 1 0 16.02 3.2Zm0 2.35a10.31 10.31 0 0 1 8.6 16.02 10.3 10.3 0 0 1-12.96 3.26l-.44-.23-3.88.91.77-3.79-.28-.47a10.31 10.31 0 0 1 8.19-15.7Zm-4.4 5.44c-.24 0-.63.09-.96.45-.32.36-1.25 1.22-1.25 2.98s1.28 3.46 1.46 3.7c.18.24 2.5 4 6.2 5.45 3.07 1.2 3.7.96 4.36.9.67-.06 2.16-.88 2.47-1.73.3-.85.3-1.58.21-1.73-.09-.15-.33-.24-.7-.42-.36-.18-2.15-1.06-2.49-1.18-.33-.12-.57-.18-.81.18-.24.36-.93 1.18-1.14 1.42-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.79-1.07-.95-1.8-2.13-2.01-2.49-.21-.36-.02-.56.16-.74.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.82-1.98-1.12-2.7-.29-.7-.59-.61-.81-.62l-.76-.01Z" />
-    </svg>
-  );
-}
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#fffaf8] text-[#2d2430]">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/70 bg-[#fffaf8]/90 backdrop-blur-xl">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-          <a href="#anasayfa" className="flex items-center gap-3">
-            <span className="grid h-12 w-12 overflow-hidden rounded-lg border border-[#eadfea] bg-white shadow-sm">
-              <img
-                src="/luniva/moon-bear-mark.png"
-                alt=""
-                className="h-full w-full object-cover"
-              />
-            </span>
-            <span>
-              <span className="block font-serif text-xl font-semibold leading-5 text-[#7e62a6]">
-                Luniva
-              </span>
-              <span className="block text-[11px] font-bold uppercase tracking-[0.24em] text-[#b78296]">
-                Baby & Flowers
-              </span>
-            </span>
-          </a>
-
-          <nav
-            aria-label="Ana menü"
-            className="hidden items-center gap-7 text-sm font-semibold text-[#665766] lg:flex"
-          >
-            <a href="#modeller" className="transition hover:text-[#8f6bb8]">
-              Modeller
-            </a>
-            <a href="#siparis" className="transition hover:text-[#8f6bb8]">
-              Sipariş
-            </a>
-            <a href="#instagram" className="transition hover:text-[#8f6bb8]">
-              Instagram
-            </a>
-            <a href="#iletisim" className="transition hover:text-[#8f6bb8]">
-              İletişim
-            </a>
-          </nav>
-
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#25d366] px-4 py-3 text-sm font-black text-white shadow-lg shadow-[#25d366]/20 transition hover:-translate-y-0.5 hover:bg-[#1fbd5b]"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-            WhatsApp
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section id="anasayfa" className="relative overflow-hidden pt-28">
         <div className="mx-auto grid min-h-[calc(100svh-7rem)] max-w-7xl items-center gap-10 px-5 pb-14 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
@@ -348,6 +254,57 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="guvenli-siparis" className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="mb-9 grid gap-5 lg:grid-cols-[0.8fr_1fr] lg:items-end">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.26em] text-[#b78296]">
+                Güvenli sipariş
+              </p>
+              <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-[#7e62a6] lg:text-5xl">
+                Canlı yayına hazır, açık ve güven veren bilgi yapısı.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-base leading-7 text-[#645864]">
+              Sipariş, teslimat, KVKK ve mesafeli satış bilgilendirmeleri ayrı
+              sayfalarda hazırlandı. Gerçek işletme bilgileri netleştiğinde bu
+              metinler son hale getirilir.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {trustItems.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-lg border border-[#eadfea] bg-[#fffaf8] p-5 shadow-sm"
+              >
+                <h3 className="font-serif text-2xl font-semibold text-[#514153]">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-[#655865]">
+                  {item.text}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/siparis-ve-teslimat"
+              className="inline-flex items-center justify-center rounded-lg bg-[#7e62a6] px-5 py-4 text-sm font-black uppercase tracking-[0.14em] text-white transition hover:-translate-y-1"
+            >
+              Sipariş ve Teslimat
+            </a>
+            <a
+              href="/gizlilik-kvkk"
+              className="inline-flex items-center justify-center rounded-lg border border-[#c8b6ff]/70 bg-white px-5 py-4 text-sm font-black uppercase tracking-[0.14em] text-[#7e62a6] transition hover:-translate-y-1"
+            >
+              Gizlilik ve KVKK
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section id="instagram" className="bg-[#e9f7ff] py-16">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[0.78fr_1fr] lg:items-center lg:px-8">
           <div>
@@ -422,73 +379,8 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-[#eadfea] bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-2 lg:grid-cols-[1.05fr_1fr_1fr_1.2fr] lg:px-8">
-          {footerColumns.map((column) => (
-            <nav key={column.title} aria-label={column.title}>
-              <h2 className="text-sm font-black uppercase tracking-[0.18em] text-[#7e62a6]">
-                {column.title}
-              </h2>
-              <ul className="mt-5 space-y-3">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    {"href" in link ? (
-                      <a
-                        href={link.href}
-                        className="text-sm font-semibold text-[#655865] transition hover:text-[#b78296]"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <span className="text-sm font-semibold text-[#7b6c7b]">
-                        {link.label}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          ))}
-
-          <div>
-            <h2 className="text-sm font-black uppercase tracking-[0.18em] text-[#7e62a6]">
-              Luniva Baby & Flowers
-            </h2>
-            <p className="mt-5 text-sm leading-7 text-[#655865]">
-              Kişiye özel bebek hediyelikleri ve çiçekli aranjmanlar için
-              siparişler WhatsApp üzerinden alınır. Gerçek domain, Instagram,
-              ETBİS ve resmi işletme bilgileri tamamlandığında bu alana eklenir.
-            </p>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#25d366] px-4 py-3 text-sm font-black text-white transition hover:bg-[#1fbd5b]"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              WhatsApp'tan Yaz
-            </a>
-          </div>
-        </div>
-
-        <div className="border-t border-[#eadfea] bg-[#fffaf8]">
-          <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 text-xs font-semibold text-[#7b6c7b] sm:flex-row sm:items-center sm:justify-between lg:px-8">
-            <span>© 2026 Luniva Baby & Flowers. Tüm hakları saklıdır.</span>
-            <span>Online ödeme yoktur; detaylar WhatsApp görüşmesinde netleşir.</span>
-          </div>
-        </div>
-      </footer>
-
-      <a
-        href={whatsappHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="floating-whatsapp"
-        aria-label="WhatsApp üzerinden sipariş ver"
-        title="WhatsApp üzerinden sipariş ver"
-      >
-        <WhatsAppIcon className="h-7 w-7" />
-      </a>
+      <SiteFooter />
+      <FloatingWhatsApp />
     </main>
   );
 }
