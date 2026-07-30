@@ -67,19 +67,19 @@ const footerColumns = [
   {
     title: "Ürün Kategorileri",
     links: [
-      { label: "Hoşgeldin Bebek Aranjmanları", href: "#modeller" },
-      { label: "İsme Özel Bebek Kapı Süsleri", href: "#modeller" },
-      { label: "Bebek Hediyelikler", href: "#modeller" },
-      { label: "Çiçekli Bebek Hediyeleri", href: "#modeller" },
-      { label: "Hastane Odası Süsleri", href: "#siparis" },
+      { label: "Hoşgeldin Bebek Aranjmanları", href: "#hosgeldin-bebek-aranjmanlari" },
+      { label: "İsme Özel Bebek Kapı Süsleri", href: "#isme-ozel-bebek-kapi-susleri" },
+      { label: "Bebek Hediyelikler", href: "#bebek-hediyelikler" },
+      { label: "Çiçekli Bebek Hediyeleri", href: "#cicekli-bebek-hediyeleri" },
+      { label: "Hastane Odası Süsleri", href: "#hastane-odasi-susleri" },
     ],
   },
   {
     title: "Kurumsal",
     links: [
-      { label: "Hakkımızda", href: "#anasayfa" },
-      { label: "Sık Sorulan Sorular", href: "#siparis" },
-      { label: "Müşteri Yorumları", href: "#modeller" },
+      { label: "Hakkımızda", href: "#hakkimizda" },
+      { label: "Sık Sorulan Sorular", href: "#sik-sorulan-sorular" },
+      { label: "Müşteri Yorumları", href: "#musteri-yorumlari" },
       { label: "Instagram", href: "#instagram" },
       { label: "İletişim", href: "#iletisim" },
     ],
@@ -87,10 +87,91 @@ const footerColumns = [
   {
     title: "Bilgilendirme",
     links: [
-      { label: "Sipariş ve Teslimat", href: "#siparis" },
-      { label: "İptal / İade Bilgileri", href: "#siparis" },
-      { label: "Gizlilik ve KVKK", href: "#iletisim" },
-      { label: "Mesafeli Satış Bilgilendirmesi", href: "#iletisim" },
+      { label: "Sipariş ve Teslimat", href: "#siparis-ve-teslimat" },
+      { label: "İptal / İade Bilgileri", href: "#iptal-iade-bilgileri" },
+      { label: "Gizlilik ve KVKK", href: "#gizlilik-kvkk" },
+      { label: "Mesafeli Satış Bilgilendirmesi", href: "#mesafeli-satis-bilgilendirmesi" },
+    ],
+  },
+];
+
+const guideGroups = [
+  {
+    title: "Ürün Kategorileri",
+    text: "Footer'daki ürün linkleri müşteriyi doğrudan ilgili ürün tipinin kısa açıklamasına getirir.",
+    items: [
+      {
+        id: "hosgeldin-bebek-aranjmanlari",
+        title: "Hoşgeldin Bebek Aranjmanları",
+        text: "Kuğu formu, çiçek detayları ve bebek temalı süslerle hazırlanan yeni doğan hediyeleri.",
+      },
+      {
+        id: "isme-ozel-bebek-kapi-susleri",
+        title: "İsme Özel Bebek Kapı Süsleri",
+        text: "Bebek adı, renk tonu ve tema bilgisine göre kişiselleştirilecek kapı süsü tasarımları.",
+      },
+      {
+        id: "bebek-hediyelikler",
+        title: "Bebek Hediyelikler",
+        text: "Ziyaret, hastane odası veya aileye özel kutlama için hazırlanabilecek hediye seçenekleri.",
+      },
+      {
+        id: "cicekli-bebek-hediyeleri",
+        title: "Çiçekli Bebek Hediyeleri",
+        text: "Lila, pembe, mavi ve krem tonlarda çiçeklerle yumuşak bir sunum isteyenler için.",
+      },
+      {
+        id: "hastane-odasi-susleri",
+        title: "Hastane Odası Süsleri",
+        text: "Doğum odası ve karşılama alanında fotoğrafa yakışacak dekoratif bebek süsleri.",
+      },
+    ],
+  },
+  {
+    title: "Kurumsal",
+    text: "Marka bilgisi, sık sorulanlar ve yorum alanı gerçek içerikler geldikçe genişletilir.",
+    items: [
+      {
+        id: "hakkimizda",
+        title: "Hakkımızda",
+        text: "Luniva Baby & Flowers, bebek karşılama hediyelerini yumuşak renkler ve kişiye özel detaylarla hazırlar.",
+      },
+      {
+        id: "sik-sorulan-sorular",
+        title: "Sık Sorulan Sorular",
+        text: "Hazırlık süresi, renk seçimi, isim yazısı ve teslimat bilgileri WhatsApp görüşmesinde netleştirilir.",
+      },
+      {
+        id: "musteri-yorumlari",
+        title: "Müşteri Yorumları",
+        text: "İlk siparişlerden sonra gerçek müşteri yorumları bu alana eklenebilir.",
+      },
+    ],
+  },
+  {
+    title: "Bilgilendirme",
+    text: "Online ödeme açılmadan önce temel bilgilendirme sade tutulur; resmi metinler işletme bilgileriyle tamamlanır.",
+    items: [
+      {
+        id: "siparis-ve-teslimat",
+        title: "Sipariş ve Teslimat",
+        text: "Model, isim, renk ve teslim günü konuşulduktan sonra hazırlık süresi ve teslim şekli paylaşılır.",
+      },
+      {
+        id: "iptal-iade-bilgileri",
+        title: "İptal / İade Bilgileri",
+        text: "Kişiye özel hazırlanan ürünlerde iptal ve değişiklik koşulları sipariş onayından önce müşteriye bildirilir.",
+      },
+      {
+        id: "gizlilik-kvkk",
+        title: "Gizlilik ve KVKK",
+        text: "Ad, telefon, adres ve sipariş notları yalnızca sipariş iletişimi ve teslimat için kullanılacak şekilde planlanır.",
+      },
+      {
+        id: "mesafeli-satis-bilgilendirmesi",
+        title: "Mesafeli Satış Bilgilendirmesi",
+        text: "Online ödeme sistemi açıldığında ön bilgilendirme ve mesafeli satış metinleri ayrı sayfa olarak hazırlanır.",
+      },
     ],
   },
 ];
@@ -387,6 +468,54 @@ export default function Home() {
               )
             )}
           </div>
+        </div>
+      </section>
+
+      <section id="site-rehberi" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+        <div className="mb-10 max-w-3xl">
+          <p className="text-sm font-black uppercase tracking-[0.26em] text-[#b78296]">
+            Site rehberi
+          </p>
+          <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-[#7e62a6] lg:text-5xl">
+            Aradığın başlık seni doğrudan ilgili bilgiye götürsün.
+          </h2>
+          <p className="mt-4 text-base leading-7 text-[#645864]">
+            Footer bağlantıları tek bir alakasız bölüme gitmez; ürün,
+            kurumsal ve bilgilendirme başlıkları burada kendi açıklamasına iner.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-3">
+          {guideGroups.map((group) => (
+            <section
+              key={group.title}
+              aria-label={group.title}
+              className="rounded-lg border border-[#eadfea] bg-white p-5 shadow-sm"
+            >
+              <h3 className="font-serif text-3xl font-semibold text-[#514153]">
+                {group.title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-[#6d616d]">
+                {group.text}
+              </p>
+              <div className="mt-5 space-y-3">
+                {group.items.map((item) => (
+                  <article
+                    key={item.id}
+                    id={item.id}
+                    className="scroll-mt-28 rounded-lg bg-[#fffaf8] p-4 ring-1 ring-[#eadfea]"
+                  >
+                    <h4 className="text-sm font-black uppercase tracking-[0.12em] text-[#7e62a6]">
+                      {item.title}
+                    </h4>
+                    <p className="mt-2 text-sm leading-6 text-[#655865]">
+                      {item.text}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
       </section>
 
