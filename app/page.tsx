@@ -97,8 +97,8 @@ const footerColumns = [
 
 const guideGroups = [
   {
-    title: "Ürün Kategorileri",
-    text: "Footer'daki ürün linkleri müşteriyi doğrudan ilgili ürün tipinin kısa açıklamasına getirir.",
+    title: "Ürünler",
+    text: "Bebek hediyesi arayanlar için hazırlanabilecek model türleri ve kullanım alanları.",
     items: [
       {
         id: "hosgeldin-bebek-aranjmanlari",
@@ -128,8 +128,8 @@ const guideGroups = [
     ],
   },
   {
-    title: "Kurumsal",
-    text: "Marka bilgisi, sık sorulanlar ve yorum alanı gerçek içerikler geldikçe genişletilir.",
+    title: "Luniva Hakkında",
+    text: "Marka hikayesi, sık sorulanlar ve yorum alanı gerçek içerikler geldikçe genişletilir.",
     items: [
       {
         id: "hakkimizda",
@@ -149,8 +149,8 @@ const guideGroups = [
     ],
   },
   {
-    title: "Bilgilendirme",
-    text: "Online ödeme açılmadan önce temel bilgilendirme sade tutulur; resmi metinler işletme bilgileriyle tamamlanır.",
+    title: "Sipariş Bilgileri",
+    text: "Sipariş, teslimat ve kişisel bilgi süreçleri netleştikçe bu alan resmi metinlerle tamamlanır.",
     items: [
       {
         id: "siparis-ve-teslimat",
@@ -471,17 +471,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="site-rehberi" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+      <section id="detaylar" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-black uppercase tracking-[0.26em] text-[#b78296]">
-            Site rehberi
+            Detaylar
           </p>
           <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-[#7e62a6] lg:text-5xl">
-            Aradığın başlık seni doğrudan ilgili bilgiye götürsün.
+            Ürünler ve sipariş bilgileri.
           </h2>
           <p className="mt-4 text-base leading-7 text-[#645864]">
-            Footer bağlantıları tek bir alakasız bölüme gitmez; ürün,
-            kurumsal ve bilgilendirme başlıkları burada kendi açıklamasına iner.
+            Sipariş vermeden önce ürün seçeneklerini, kişiye özel hazırlık
+            detaylarını ve teslimat notlarını buradan inceleyebilirsin.
           </p>
         </div>
 
