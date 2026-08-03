@@ -139,6 +139,12 @@ a:focus-visible {
   background: #1fbd5b;
 }
 
+.floating-whatsapp svg,
+a svg {
+  display: block;
+  flex: 0 0 auto;
+}
+
 @media (max-width: 720px) {
   .hero-brand-image {
     height: auto;

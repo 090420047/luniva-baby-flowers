@@ -1,5 +1,62 @@
 import Link from "next/link";
 import { whatsappHref } from "../site-content";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-const links = [{ href: "/", label: "Ana Sayfa" }, { href: "/modeller", label: "Modeller" }, { href: "/siparis", label: "Sipariş" }, { href: "/hakkimizda", label: "Hakkımızda" }, { href: "/iletisim", label: "İletişim" }];
-export function SiteHeader() { return <header className="fixed inset-x-0 top-0 z-50 border-b border-white/70 bg-[#fffaf8]/90 backdrop-blur-xl"><div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8"><Link href="/" className="flex items-center gap-3"><span className="grid h-10 w-10 overflow-hidden rounded-xl border border-[#eadfea] bg-white shadow-sm"><img src="/luniva/moon-bear-mark.png" alt="Luniva Baby" className="h-full w-full object-cover" /></span><span><span className="block font-serif text-lg font-semibold leading-5 text-[#7e62a6]">Luniva</span><span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#b78296]">Baby & Flowers</span></span></Link><nav aria-label="Ana menü" className="hidden items-center gap-6 text-[13px] font-semibold text-[#665766] xl:flex">{links.map((link) => <Link key={link.href} href={link.href} className="transition hover:text-[#8f6bb8]">{link.label}</Link>)}</nav><a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-3.5 py-2.5 text-[12px] font-bold text-white shadow-lg shadow-[#25d366]/20 transition hover:-translate-y-0.5 hover:bg-[#1fbd5b]"><WhatsAppIcon className="h-4 w-4" /><span className="hidden sm:inline">WhatsApp</span></a></div></header>; }
+
+const links = [
+  { href: "/", label: "Ana Sayfa" },
+  { href: "/#kategoriler", label: "Kategoriler" },
+  { href: "/modeller", label: "Modeller" },
+  { href: "/siparis", label: "Sipariş" },
+  { href: "/iletisim", label: "İletişim" },
+];
+
+export function SiteHeader() {
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/70 bg-[#fffaf8]/90 backdrop-blur-xl">
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
+        <Link href="/" className="flex items-center gap-3">
+          <span className="grid h-10 w-10 overflow-hidden rounded-xl border border-[#eadfea] bg-white shadow-sm">
+            <img
+              src="/luniva/moon-bear-mark.png"
+              alt="Luniva Baby"
+              className="h-full w-full object-cover"
+            />
+          </span>
+          <span>
+            <span className="block font-serif text-lg font-semibold leading-5 text-[#7e62a6]">
+              Luniva
+            </span>
+            <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#b78296]">
+              Baby & Flowers
+            </span>
+          </span>
+        </Link>
+
+        <nav
+          aria-label="Ana menü"
+          className="hidden items-center gap-6 text-[13px] font-semibold text-[#665766] xl:flex"
+        >
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="transition hover:text-[#8f6bb8]"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-3.5 py-2.5 text-[12px] font-bold text-white shadow-lg shadow-[#25d366]/20 transition hover:-translate-y-0.5 hover:bg-[#1fbd5b]"
+        >
+          <WhatsAppIcon className="h-4 w-4" />
+          <span className="hidden sm:inline">WhatsApp</span>
+        </a>
+      </div>
+    </header>
+  );
+}

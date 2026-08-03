@@ -1,49 +1,429 @@
 export const siteName = "Luniva Baby & Flowers";
 export const whatsappNumber = "905555555555";
-export const whatsappMessage = encodeURIComponent("Merhaba Luniva Baby & Flowers, sipariş vermek istiyorum.");
+export const whatsappMessage = encodeURIComponent(
+  "Merhaba Luniva Baby & Flowers, sipariş vermek istiyorum."
+);
 export const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-export const instagramNotice = "Instagram hesabı açıldığında kullanıcı adı buraya eklenecek.";
+export const instagramNotice =
+  "Instagram hesabı açıldığında kullanıcı adı buraya eklenecek.";
+
+export const productCategories = [
+  {
+    slug: "hos-geldin-bebek-hediyeleri",
+    title: "Hoş Geldin Bebek Modelleri",
+    shortTitle: "Hoş Geldin Bebek",
+    description:
+      "Yeni doğan ziyaretleri, hastane odası sunumları ve ilk karşılama anları için çiçekli, isimli ve zarif strafor modeller.",
+    image: "/luniva/baby-pink-lantern.png",
+  },
+  {
+    slug: "bebek-buketleri",
+    title: "Buketler",
+    shortTitle: "Buketler",
+    description:
+      "Çiçek buketi formunda hazırlanacak bebek hediyeleri için ayrılan yeni kategori.",
+    image: "/luniva/family-gift.png",
+    emptyLabel: "Bu kategoriye buket modelleri yakında eklenecek.",
+  },
+  {
+    slug: "isme-ozel-tasarimlar",
+    title: "İsme Özel Tasarımlar",
+    shortTitle: "İsme Özel",
+    description:
+      "Bebek adı, renk paleti, figür ve not detaylarıyla kişiselleştirilebilen özel modeller.",
+    image: "/luniva/blue-swan-lake.png",
+  },
+  {
+    slug: "kiz-bebek-modelleri",
+    title: "Kız Bebek Tasarımları",
+    shortTitle: "Kız Bebek",
+    description:
+      "Pembe, lila, krem ve zarif çiçek detaylarının öne çıktığı kız bebek hediyeleri.",
+    image: "/luniva/pink-bear-strafor.png",
+  },
+  {
+    slug: "erkek-bebek-modelleri",
+    title: "Erkek Bebek Tasarımları",
+    shortTitle: "Erkek Bebek",
+    description:
+      "Mavi, beyaz, sarı ve doğal tonlarla hazırlanan erkek bebek aranjmanları.",
+    image: "/luniva/blue-yellow-swan.png",
+  },
+  {
+    slug: "hediyelik-ve-ozel-gun",
+    title: "Hediyelik & Özel Gün",
+    shortTitle: "Hediyelik & Özel Gün",
+    description:
+      "Konya hatırası, özel gün objeleri ve elde verilebilecek dekoratif hediye seçenekleri.",
+    image: "/luniva/konya-sema-crescent.png",
+  },
+] as const;
+
+export type ProductCategorySlug = (typeof productCategories)[number]["slug"];
+
+export type ProductItem = {
+  title: string;
+  summary: string;
+  image: string;
+  categories: ProductCategorySlug[];
+  tags: string[];
+};
+
+export const productItems: ProductItem[] = [
+  {
+    title: "Pembe fener hoş geldin bebek",
+    summary:
+      "İnci detaylı, pembe kurdeleli ve minik bebek figürlü strafor hediye modeli.",
+    image: "/luniva/baby-pink-lantern.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "kiz-bebek-modelleri",
+      "isme-ozel-tasarimlar",
+    ],
+    tags: ["Strafor model", "Pembe", "İsme özel"],
+  },
+  {
+    title: "Ay yıldızlı mavi bebek modeli",
+    summary:
+      "Ay formu, mavi yıldızlar, ayıcık ve papatya detaylarıyla erkek bebek için sade bir hoş geldin modeli.",
+    image: "/luniva/generated-moon-stars-blue.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "erkek-bebek-modelleri",
+      "isme-ozel-tasarimlar",
+    ],
+    tags: ["Ay formu", "Mavi", "Strafor model"],
+  },
+  {
+    title: "Pembe balon sepet aranjmanı",
+    summary:
+      "Sıcak hava balonu formunda, pembe kurdeleli ve ayıcıklı gösterişli bebek hediyesi.",
+    image: "/luniva/generated-hot-air-balloon-pink.png",
+    categories: ["hos-geldin-bebek-hediyeleri", "kiz-bebek-modelleri"],
+    tags: ["Balon sepet", "Pembe", "Çiçekli"],
+  },
+  {
+    title: "Pembe bebek arabası modeli",
+    summary:
+      "Bebek arabası formu, inci süslemeler ve pembe ayıcıkla hazırlanan zarif kız bebek tasarımı.",
+    image: "/luniva/generated-pram-pink.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "kiz-bebek-modelleri",
+    ],
+    tags: ["Bebek arabası", "Pembe", "İnci detay"],
+  },
+  {
+    title: "Sallanan at pembe model",
+    summary:
+      "Sallanan at formunda, pembe çiçekler ve ayıcık detayıyla hazırlanan özel gün bebek hediyesi.",
+    image: "/luniva/generated-rocking-horse-pink.png",
+    categories: ["kiz-bebek-modelleri", "hediyelik-ve-ozel-gun"],
+    tags: ["Sallanan at", "Pembe", "Özel gün"],
+  },
+  {
+    title: "Pembe ayıcık masal konsepti",
+    summary:
+      "Ayıcık formu, çiçek detayları ve yumuşak pembe tonlarıyla gösterişli karşılama modeli.",
+    image: "/luniva/pink-bear-strafor.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "kiz-bebek-modelleri",
+    ],
+    tags: ["Strafor model", "Ayıcık", "Pembe konsept"],
+  },
+  {
+    title: "Mavi kuğulu göl konsepti",
+    summary:
+      "Kuğu formu, mavi ayıcık ve beyaz çiçeklerle hazırlanan erkek bebek sunumu.",
+    image: "/luniva/blue-swan-lake.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "erkek-bebek-modelleri",
+      "isme-ozel-tasarimlar",
+    ],
+    tags: ["Kuğu", "Mavi", "İsim yazısı"],
+  },
+  {
+    title: "Lila kuğu oda sunumu",
+    summary:
+      "Bebek odası atmosferine yakışan, lila çiçekli ve isme özel kuğu aranjmanı.",
+    image: "/luniva/purple-swan-nursery.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "kiz-bebek-modelleri",
+      "isme-ozel-tasarimlar",
+    ],
+    tags: ["Lila", "Hastane odası", "Kuğu"],
+  },
+  {
+    title: "Sarı çiçekli mavi kuğu",
+    summary:
+      "Mavi fiyonklu ayıcık ve sarı orkide tonlarıyla daha canlı erkek bebek modeli.",
+    image: "/luniva/blue-yellow-swan.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "erkek-bebek-modelleri",
+    ],
+    tags: ["Mavi", "Sarı çiçek", "Strafor model"],
+  },
+  {
+    title: "Aileye hediye sunumu",
+    summary:
+      "Elde taşındığında dolu ve özenli görünen, ziyaret hediyesi olarak düşünülebilecek aranjman.",
+    image: "/luniva/family-gift.png",
+    categories: ["hediyelik-ve-ozel-gun"],
+    tags: ["Hediyelik", "Ziyaret hediyesi", "Fotoğraf sunumu"],
+  },
+  {
+    title: "Konya Hatırası Mevlana çerçeve",
+    summary:
+      "Ay formu ve Mevlana temalı çerçevesiyle özel gün ve hatıra hediyesi.",
+    image: "/luniva/konya-mevlana-frame.png",
+    categories: ["hediyelik-ve-ozel-gun"],
+    tags: ["Konya hatırası", "Mevlana", "Dekoratif"],
+  },
+  {
+    title: "Konya sema ay modeli",
+    summary:
+      "Sema ve Konya silüetiyle hazırlanan, vitrin ya da özel gün hediyesi olarak kullanılabilecek model.",
+    image: "/luniva/konya-sema-crescent.png",
+    categories: ["hediyelik-ve-ozel-gun"],
+    tags: ["Konya", "Sema", "Hatıra"],
+  },
+  {
+    title: "Mevlana öğütlü hatıra",
+    summary:
+      "Öğüt panosu ve ay formunu birleştiren daha sade, anlamlı hediyelik tasarım.",
+    image: "/luniva/konya-advice-frame.png",
+    categories: ["hediyelik-ve-ozel-gun"],
+    tags: ["Özel gün", "Hatıra", "Dekoratif"],
+  },
+];
+
+export const productCategoryMap = Object.fromEntries(
+  productCategories.map((category) => [category.slug, category])
+) as Record<ProductCategorySlug, (typeof productCategories)[number]>;
+
+export function getProductsByCategory(slug: ProductCategorySlug) {
+  return productItems.filter((item) => item.categories.includes(slug));
+}
 
 export const footerColumns = [
-  { title: "Ürün Kategorileri", links: [
-    { label: "Hoş Geldin Bebek Aranjmanları", href: "/hosgeldin-bebek-aranjmanlari" },
-    { label: "İsme Özel Bebek Kapı Süsleri", href: "/isme-ozel-bebek-kapi-susleri" },
-    { label: "Bebek Hediyelikleri", href: "/bebek-hediyelikler" },
-    { label: "Çiçekli Bebek Hediyeleri", href: "/cicekli-bebek-hediyeleri" },
-    { label: "Hastane Odası Süsleri", href: "/hastane-odasi-susleri" },
-  ] },
-  { title: "Kurumsal", links: [
-    { label: "Hakkımızda", href: "/hakkimizda" }, { label: "Sık Sorulan Sorular", href: "/sik-sorulan-sorular" }, { label: "Instagram", href: "/instagram" }, { label: "İletişim", href: "/iletisim" },
-  ] },
-  { title: "Bilgilendirme", links: [
-    { label: "Sipariş ve Teslimat", href: "/siparis-ve-teslimat" }, { label: "İptal / İade Bilgileri", href: "/iptal-iade-bilgileri" }, { label: "Gizlilik ve KVKK", href: "/gizlilik-kvkk" }, { label: "Mesafeli Satış Bilgilendirmesi", href: "/mesafeli-satis-bilgilendirmesi" },
-  ] },
+  {
+    title: "Kategoriler",
+    links: productCategories.map((category) => ({
+      label: category.shortTitle,
+      href: `/${category.slug}`,
+    })),
+  },
+  {
+    title: "Kurumsal",
+    links: [
+      { label: "Hakkımızda", href: "/hakkimizda" },
+      { label: "Sık Sorulan Sorular", href: "/sik-sorulan-sorular" },
+      { label: "Instagram", href: "/instagram" },
+      { label: "İletişim", href: "/iletisim" },
+    ],
+  },
+  {
+    title: "Bilgilendirme",
+    links: [
+      { label: "Sipariş ve Teslimat", href: "/siparis-ve-teslimat" },
+      { label: "İptal / İade Bilgileri", href: "/iptal-iade-bilgileri" },
+      { label: "Gizlilik ve KVKK", href: "/gizlilik-kvkk" },
+      {
+        label: "Mesafeli Satış Bilgilendirmesi",
+        href: "/mesafeli-satis-bilgilendirmesi",
+      },
+    ],
+  },
 ] as const;
 
 export const trustItems = [
-  { title: "Sipariş öncesi net bilgi", text: "Model, renk, isim, fiyat, hazırlık süresi ve teslimat detayı WhatsApp üzerinden yazılı olarak netleştirilir." },
-  { title: "Kişiye özel hazırlık", text: "Bebek adı ve renk seçimi gibi kişisel detaylar onaylandıktan sonra üretime başlanır." },
-  { title: "Gizlilik ve KVKK", text: "Sipariş bilgileriniz yalnızca sipariş iletişimi ve teslimat amacıyla kullanılır." },
+  {
+    title: "El emeği tasarım şıklığı",
+    text: "Her model renk, figür ve çiçek detaylarıyla özel bir hediye hissi verecek şekilde hazırlanır.",
+  },
+  {
+    title: "Fotoğrafta dikkat çeken sunum",
+    text: "Hastane odası, doğum ziyareti ve özel gün anılarında zarif duran gösterişli aranjmanlar öne çıkar.",
+  },
+  {
+    title: "Beğendiğini hemen sor",
+    text: "Müşteri modeli seçer, WhatsApp'tan renk, isim ve teslimat detaylarını hızlıca konuşur.",
+  },
 ] as const;
 
-export type InfoPageContent = { slug: string; eyebrow: string; title: string; intro: string; notice?: string; sections: { title: string; body: string[] }[]; };
-const page = (slug: string, eyebrow: string, title: string, intro: string, sections: { title: string; body: string[] }[]): InfoPageContent => ({ slug, eyebrow, title, intro, sections });
+export type InfoPageContent = {
+  slug: string;
+  eyebrow: string;
+  title: string;
+  intro: string;
+  notice?: string;
+  sections: { title: string; body: string[] }[];
+};
+
+const page = (
+  slug: string,
+  eyebrow: string,
+  title: string,
+  intro: string,
+  sections: { title: string; body: string[] }[],
+  notice?: string
+): InfoPageContent => ({ slug, eyebrow, title, intro, sections, notice });
 
 export const infoPages = {
-  "hosgeldin-bebek-aranjmanlari": page("hosgeldin-bebek-aranjmanlari", "Ürün kategorisi", "Hoş Geldin Bebek Aranjmanları", "Yeni doğan ziyaretleri ve bebek karşılama hazırlıkları için zarif çiçeklerle hazırlanan kişiye özel hediye modelleri.", [{ title: "Kişiselleştirme", body: ["Bebek adı, renk tonu, çiçek seçimi ve özel notunuz birlikte belirlenir."] }]),
-  "isme-ozel-bebek-kapi-susleri": page("isme-ozel-bebek-kapi-susleri", "Ürün kategorisi", "İsme Özel Bebek Kapı Süsleri", "Bebek adı, renk paleti ve tema seçimine göre hazırlanan kapı süsü tasarımları.", [{ title: "Tasarım süreci", body: ["İsim yazısı ve renk detayları sipariş sırasında birlikte seçilir."] }]),
-  "bebek-hediyelikler": page("bebek-hediyelikler", "Ürün kategorisi", "Bebek Hediyelikleri", "Yeni doğan ziyareti ve aileye kutlama hediyesi için hazırlanan zarif bebek hediyelikleri.", [{ title: "Hediye seçimi", body: ["Mavi, lila, pembe ve krem tonlardaki seçenekleri birlikte değerlendirebiliriz."] }]),
-  "cicekli-bebek-hediyeleri": page("cicekli-bebek-hediyeleri", "Ürün kategorisi", "Çiçekli Bebek Hediyeleri", "Yumuşak renkli çiçekler ve bebek figürleriyle hazırlanan zarif sunumlar.", [{ title: "Tasarım dili", body: ["Lila, pembe, mavi, krem ve altın detaylar bir arada kullanılabilir."] }]),
-  "hastane-odasi-susleri": page("hastane-odasi-susleri", "Ürün kategorisi", "Hastane Odası Süsleri", "Doğum odası ve karşılama alanı için bebek temalı dekoratif süsler.", [{ title: "Teslimat", body: ["Teslim günü, saati ve adres bilgisini sipariş sırasında netleştiriyoruz."] }]),
-  hakkimizda: page("hakkimizda", "Kurumsal", "Hakkımızda", "Luniva Baby & Flowers; bebek karşılama hediyelerini, çiçeklerin zarafeti ve kişiye özel dokunuşlarla hazırlayan bir markadır.", [{ title: "Marka yaklaşımı", body: ["Her tasarımı fotoğraflara yakışan, sevgi dolu bir hatıraya dönüştürmeyi hedefliyoruz."] }]),
-  "sik-sorulan-sorular": page("sik-sorulan-sorular", "Kurumsal", "Sık Sorulan Sorular", "Sipariş vermeden önce merak edebileceğiniz konular için kısa bilgiler.", [{ title: "Sipariş nasıl verilir?", body: ["Beğendiğiniz modeli WhatsApp üzerinden gönderin; isim, renk ve teslim gününü birlikte netleştirelim."] }]),
-  instagram: page("instagram", "Sosyal medya", "Instagram", "Instagram hesabı açıldığında ürün vitrini ve güncel paylaşımlar bu sayfadan yönlendirilecektir.", [{ title: "Yakında", body: ["Hazırlık süreci, teslimat sunumları ve kampanya görselleri aynı marka diliyle paylaşılacaktır."] }]),
-  iletisim: page("iletisim", "İletişim", "İletişim", "Sipariş ve bilgi almak için en hızlı iletişim kanalımız WhatsApp'tır.", [{ title: "WhatsApp sipariş", body: ["Beğendiğiniz modeli bize göndererek sipariş konuşmasını başlatabilirsiniz."] }]),
-  "siparis-ve-teslimat": page("siparis-ve-teslimat", "Bilgilendirme", "Sipariş ve Teslimat", "Sipariş ve teslimat sürecine ilişkin temel bilgiler.", [{ title: "Sipariş akışı", body: ["Model, isim, renk, teslim tarihi ve teslimat şekli yazılı olarak netleştirilir."] }]),
-  "iptal-iade-bilgileri": page("iptal-iade-bilgileri", "Bilgilendirme", "İptal / İade Bilgileri", "Kişiye özel ürünlerde iptal ve iade koşulları sipariş öncesinde açıkça paylaşılır.", [{ title: "Sipariş iptali", body: ["Üretime başlanmadan önce değişiklik veya iptal talebinizi WhatsApp üzerinden iletebilirsiniz."] }]),
-  "gizlilik-kvkk": page("gizlilik-kvkk", "Bilgilendirme", "Gizlilik ve KVKK", "Sipariş sürecinde alınan bilgiler yalnızca iletişim ve teslimat amacıyla kullanılır.", [{ title: "Bilgilerin kullanımı", body: ["Kişisel bilgileriniz siparişin hazırlanması ve teslimatın yapılması için kullanılır."] }]),
-  "mesafeli-satis-bilgilendirmesi": page("mesafeli-satis-bilgilendirmesi", "Bilgilendirme", "Mesafeli Satış Bilgilendirmesi", "Uzaktan alınan siparişlerde müşteriye satış öncesinde açık bilgi verilir.", [{ title: "Ön bilgilendirme", body: ["Ürünün özellikleri, fiyatı ve teslimat bilgisi siparişten önce paylaşılır."] }]),
-  modeller: page("modeller", "Koleksiyonlar", "Luniva Modelleri", "Bebek doğumu ve en özel ilk günler için hazırlanan kişiye özel hediye alternatifleri.", [{ title: "Hoş Geldin Bebek aranjmanları", body: ["Kuğu, ayıcık ve çiçek detaylarıyla tasarlanan modeller isim ve renk tercihinize göre kişiselleştirilebilir."] }]),
-  siparis: page("siparis", "Sipariş rehberi", "Siparişinizi birlikte şekillendirelim", "Hayalinizdeki hediyeyi kısa bilgilerle paylaşın; tasarımı, fiyatı ve teslimat detayını WhatsApp üzerinden netleştirelim.", [{ title: "Modelinizi seçin", body: ["Beğendiğiniz modeli veya ilham görselini bize gönderin."] }, { title: "Detayları paylaşın", body: ["Bebek adı, renk tercihi, özel not ve teslim tarihini birlikte belirleyelim."] }]),
+  hakkimizda: page(
+    "hakkimizda",
+    "Kurumsal",
+    "Hakkımızda",
+    "Luniva Baby & Flowers; bebek karşılama hediyelerini, çiçeklerin zarafeti ve kişiye özel dokunuşlarla hazırlayan bir markadır.",
+    [
+      {
+        title: "Marka yaklaşımı",
+        body: [
+          "Her tasarımı fotoğraflara yakışan, sevgi dolu bir hatıraya dönüştürmeyi hedefliyoruz.",
+        ],
+      },
+    ]
+  ),
+  "sik-sorulan-sorular": page(
+    "sik-sorulan-sorular",
+    "Kurumsal",
+    "Sık Sorulan Sorular",
+    "Sipariş vermeden önce merak edebileceğiniz konular için kısa bilgiler.",
+    [
+      {
+        title: "Sipariş nasıl verilir?",
+        body: [
+          "Beğendiğiniz modeli WhatsApp üzerinden gönderin; isim, renk ve teslim gününü birlikte netleştirelim.",
+        ],
+      },
+      {
+        title: "Ürünler kişiye özel mi hazırlanır?",
+        body: [
+          "Evet. İsim yazısı, renk paleti, figür ve çiçek seçimi sipariş konuşmasında birlikte belirlenir.",
+        ],
+      },
+    ]
+  ),
+  instagram: page(
+    "instagram",
+    "Sosyal medya",
+    "Instagram",
+    "Instagram hesabı açıldığında ürün vitrini ve güncel paylaşımlar bu sayfadan yönlendirilecektir.",
+    [
+      {
+        title: "Yakında",
+        body: [
+          "Hazırlık süreci, teslimat sunumları ve kampanya görselleri aynı marka diliyle paylaşılacaktır.",
+        ],
+      },
+    ]
+  ),
+  iletisim: page(
+    "iletisim",
+    "İletişim",
+    "İletişim",
+    "Sipariş ve bilgi almak için en hızlı iletişim kanalımız WhatsApp'tır.",
+    [
+      {
+        title: "WhatsApp sipariş",
+        body: [
+          "Beğendiğiniz modeli bize göndererek sipariş konuşmasını başlatabilirsiniz.",
+        ],
+      },
+    ]
+  ),
+  "siparis-ve-teslimat": page(
+    "siparis-ve-teslimat",
+    "Bilgilendirme",
+    "Sipariş ve Teslimat",
+    "Sipariş ve teslimat sürecine ilişkin temel bilgiler.",
+    [
+      {
+        title: "Sipariş akışı",
+        body: [
+          "Model, isim, renk, teslim tarihi ve teslimat şekli yazılı olarak netleştirilir.",
+        ],
+      },
+    ]
+  ),
+  "iptal-iade-bilgileri": page(
+    "iptal-iade-bilgileri",
+    "Bilgilendirme",
+    "İptal / İade Bilgileri",
+    "Kişiye özel ürünlerde iptal ve iade koşulları sipariş öncesinde açıkça paylaşılır.",
+    [
+      {
+        title: "Sipariş iptali",
+        body: [
+          "Üretime başlanmadan önce değişiklik veya iptal talebinizi WhatsApp üzerinden iletebilirsiniz.",
+        ],
+      },
+    ]
+  ),
+  "gizlilik-kvkk": page(
+    "gizlilik-kvkk",
+    "Bilgilendirme",
+    "Gizlilik ve KVKK",
+    "Sipariş sürecinde alınan bilgiler yalnızca iletişim ve teslimat amacıyla kullanılır.",
+    [
+      {
+        title: "Bilgilerin kullanımı",
+        body: [
+          "Kişisel bilgileriniz siparişin hazırlanması ve teslimatın yapılması için kullanılır.",
+        ],
+      },
+    ]
+  ),
+  "mesafeli-satis-bilgilendirmesi": page(
+    "mesafeli-satis-bilgilendirmesi",
+    "Bilgilendirme",
+    "Mesafeli Satış Bilgilendirmesi",
+    "Uzaktan alınan siparişlerde müşteriye satış öncesinde açık bilgi verilir.",
+    [
+      {
+        title: "Ön bilgilendirme",
+        body: [
+          "Ürünün özellikleri, fiyatı ve teslimat bilgisi siparişten önce paylaşılır.",
+        ],
+      },
+    ]
+  ),
+  modeller: page(
+    "modeller",
+    "Koleksiyonlar",
+    "Luniva Modelleri",
+    "Bebek doğumu ve en özel ilk günler için hazırlanan kişiye özel hediye alternatifleri.",
+    [
+      {
+        title: "Kategori seçerek ilerleyin",
+        body: [
+          "Ana sayfadaki kategori kutularından seçim yaparak yalnızca ilgili modelleri görebilirsiniz.",
+        ],
+      },
+    ]
+  ),
+  siparis: page(
+    "siparis",
+    "Sipariş rehberi",
+    "Siparişinizi birlikte şekillendirelim",
+    "Hayalinizdeki hediyeyi kısa bilgilerle paylaşın; tasarımı, fiyatı ve teslimat detayını WhatsApp üzerinden netleştirelim.",
+    [
+      {
+        title: "Modelinizi seçin",
+        body: ["Beğendiğiniz modeli veya ilham görselini bize gönderin."],
+      },
+      {
+        title: "Detayları paylaşın",
+        body: [
+          "Bebek adı, renk tercihi, özel not ve teslim tarihini birlikte belirleyelim.",
+        ],
+      },
+    ]
+  ),
 } satisfies Record<string, InfoPageContent>;
+
 export type InfoPageSlug = keyof typeof infoPages;

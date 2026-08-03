@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { InfoPageView } from "../components/InfoPageView";
-import { infoPages, siteName } from "../site-content";
+import { ProductCategoryView } from "../components/ProductCategoryView";
+import {
+  infoPages,
+  productCategories,
+  productCategoryMap,
+  siteName,
+  type InfoPageSlug,
+  type ProductCategorySlug,
+} from "../site-content";
 
 type PageProps = {
   params: Promise<{
@@ -10,14 +18,29 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return Object.keys(infoPages).map((slug) => ({ slug }));
+  const infoSlugs = Object.keys(infoPages).map((slug) => ({ slug }));
+  const categorySlugs = productCategories.map((category) => ({
+    slug: category.slug,
+  }));
+
+  return [...infoSlugs, ...categorySlugs];
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = infoPages[slug];
+
+  if (slug in productCategoryMap) {
+    const category = productCategoryMap[slug as ProductCategorySlug];
+
+    return {
+      title: `${category.title} | ${siteName}`,
+      description: category.description,
+    };
+  }
+
+  const page = infoPages[slug as InfoPageSlug];
 
   if (!page) {
     return {
@@ -31,9 +54,14 @@ export async function generateMetadata({
   };
 }
 
-export default async function InfoRoute({ params }: PageProps) {
+export default async function DynamicRoute({ params }: PageProps) {
   const { slug } = await params;
-  const page = infoPages[slug];
+
+  if (slug in productCategoryMap) {
+    return <ProductCategoryView slug={slug as ProductCategorySlug} />;
+  }
+
+  const page = infoPages[slug as InfoPageSlug];
 
   if (!page) {
     notFound();
