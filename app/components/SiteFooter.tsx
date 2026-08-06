@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { footerColumns, siteName, whatsappHref } from "../site-content";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { BackToTop } from "./BackToTop";
 
 export function SiteFooter() {
   return (
@@ -42,7 +43,7 @@ export function SiteFooter() {
             className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#1fbd5b]"
           >
             <WhatsAppIcon className="h-5 w-5" />
-            WhatsApp'tan Yaz
+            WhatsApp&apos;tan Yaz
           </a>
         </div>
       </div>
@@ -55,6 +56,7 @@ export function SiteFooter() {
           </span>
         </div>
       </div>
+    <BackToTop />
     </footer>
   );
 }

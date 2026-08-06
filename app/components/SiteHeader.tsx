@@ -1,62 +1,6 @@
 import Link from "next/link";
-import { whatsappHref } from "../site-content";
+import { productCategories, whatsappHref } from "../site-content";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-
-const links = [
-  { href: "/", label: "Ana Sayfa" },
-  { href: "/#kategoriler", label: "Kategoriler" },
-  { href: "/modeller", label: "Modeller" },
-  { href: "/siparis", label: "Sipariş" },
-  { href: "/iletisim", label: "İletişim" },
-];
-
-export function SiteHeader() {
-  return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/70 bg-[#fffaf8]/90 backdrop-blur-xl">
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
-        <Link href="/" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 overflow-hidden rounded-xl border border-[#eadfea] bg-white shadow-sm">
-            <img
-              src="/luniva/moon-bear-mark.png"
-              alt="Luniva Baby"
-              className="h-full w-full object-cover"
-            />
-          </span>
-          <span>
-            <span className="block font-serif text-lg font-semibold leading-5 text-[#7e62a6]">
-              Luniva
-            </span>
-            <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#b78296]">
-              Baby & Flowers
-            </span>
-          </span>
-        </Link>
-
-        <nav
-          aria-label="Ana menü"
-          className="hidden items-center gap-6 text-[13px] font-semibold text-[#665766] xl:flex"
-        >
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="transition hover:text-[#8f6bb8]"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <a
-          href={whatsappHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-3.5 py-2.5 text-[12px] font-bold text-white shadow-lg shadow-[#25d366]/20 transition hover:-translate-y-0.5 hover:bg-[#1fbd5b]"
-        >
-          <WhatsAppIcon className="h-4 w-4" />
-          <span className="hidden sm:inline">WhatsApp</span>
-        </a>
-      </div>
-    </header>
-  );
-}
+import { SearchButton } from "./SearchButton";
+const links = [{ href: "/siparis", label: "Sipari\u015f" }, { href: "/hakkimizda", label: "Hakk\u0131m\u0131zda" }, { href: "/iletisim", label: "\u0130leti\u015fim" }];
+export function SiteHeader() { return <header className="fixed inset-x-0 top-0 z-50 border-b border-[#eadfea]/80 bg-[#fffaf8]/92 backdrop-blur-xl"><div className="mx-auto flex h-[78px] max-w-7xl items-center justify-between px-5 lg:px-8"><Link href="/" className="brand-lockup group flex items-center gap-3.5" aria-label="Luniva Baby & Flowers ana sayfa"><span className="brand-mark grid h-12 w-12 place-items-center overflow-hidden rounded-full"><img src="/luniva/moon-bear-mark.png" alt="" className="h-full w-full object-contain p-1" /></span><span className="leading-none"><span className="block font-serif text-[23px] font-semibold tracking-[-0.035em] text-[#70528f] transition group-hover:text-[#8a619b]">Luniva</span><span className="mt-1.5 block text-[9px] font-bold tracking-[0.24em] text-[#b78296]">BABY & FLOWERS</span></span></Link><nav aria-label="Ana men\u00fc" className="hidden items-center gap-6 text-[13px] font-semibold text-[#665766] xl:flex"><Link href="/" className="transition hover:text-[#8f6bb8]">Ana Sayfa</Link><div className="group relative"><Link href="/#kategoriler" className="inline-flex py-7 transition hover:text-[#8f6bb8]">Kategoriler</Link><div className="invisible absolute left-1/2 top-[66px] w-64 -translate-x-1/2 rounded-2xl border border-[#eadfea] bg-white p-2 opacity-0 shadow-xl shadow-[#7e62a6]/10 transition duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">{productCategories.map((category) => <Link key={category.slug} href={`/${category.slug}`} className="block rounded-xl px-4 py-2.5 text-sm text-[#5f535f] transition hover:bg-[#f7eef5] hover:text-[#70528f]">{category.shortTitle}</Link>)}</div></div>{links.map((link) => <Link key={link.href} href={link.href} className="transition hover:text-[#8f6bb8]">{link.label}</Link>)}</nav><div className="flex items-center gap-2"><SearchButton /><a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25d366] px-4 py-3 text-[12px] font-bold text-white shadow-lg shadow-[#25d366]/20 transition hover:-translate-y-0.5 hover:bg-[#1fbd5b]"><WhatsAppIcon className="h-4 w-4" /><span className="hidden sm:inline">WhatsApp</span></a></div></div></header>; }

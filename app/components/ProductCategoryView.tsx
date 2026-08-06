@@ -10,6 +10,7 @@ import { FloatingWhatsApp } from "./FloatingWhatsApp";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { ScrollReveal } from "./ScrollReveal";
 
 export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
   const category = productCategoryMap[slug];
@@ -19,8 +20,9 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
   return (
     <main className="min-h-screen bg-[#fffaf8] text-[#2d2430]">
       <SiteHeader />
+      <ScrollReveal />
 
-      <section className="mx-auto max-w-7xl px-5 pb-16 pt-32 lg:px-8">
+      <section data-reveal className="mx-auto max-w-7xl px-5 pb-16 pt-32 lg:px-8">
         <Link
           href="/#kategoriler"
           className="text-xs font-bold uppercase tracking-[0.14em] text-[#b78296] transition hover:text-[#7e62a6]"
@@ -54,13 +56,13 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
             {products.map((item) => (
               <article
                 key={item.title}
-                className="overflow-hidden rounded-2xl border border-[#eadfea] bg-white shadow-sm"
+                className="group overflow-hidden rounded-2xl border border-[#eadfea] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#c8b6ff]/15"
               >
                 <div className="aspect-[4/4.35] overflow-hidden bg-[#f7eef5]">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-5">
@@ -117,7 +119,7 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
         )}
       </section>
 
-      <section className="border-t border-[#eadfea] bg-white py-12">
+      <section data-reveal className="border-t border-[#eadfea] bg-white py-12">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <h2 className="font-serif text-2xl font-semibold text-[#70528f]">
             Diğer kategoriler

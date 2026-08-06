@@ -5,13 +5,15 @@ import { FloatingWhatsApp } from "./FloatingWhatsApp";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { ScrollReveal } from "./ScrollReveal";
 
 export function InfoPageView({ page }: { page: InfoPageContent }) {
   return (
     <main className="min-h-screen bg-[#fffaf8] text-[#2d2430]">
       <SiteHeader />
+      <ScrollReveal />
 
-      <section className="mx-auto max-w-5xl px-5 pb-16 pt-32 lg:px-8">
+      <section data-reveal className="mx-auto max-w-5xl px-5 pb-16 pt-32 lg:px-8">
         <Link
           href="/"
           className="text-xs font-bold uppercase tracking-[0.14em] text-[#b78296] transition hover:text-[#7e62a6]"
@@ -62,7 +64,7 @@ export function InfoPageView({ page }: { page: InfoPageContent }) {
             className="inline-flex items-center justify-center gap-3 rounded-xl bg-[#25d366] px-5 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-xl shadow-[#25d366]/20 transition hover:-translate-y-1"
           >
             <WhatsAppIcon className="h-5 w-5" />
-            WhatsApp'tan Yaz
+            WhatsApp&apos;tan Yaz
           </a>
           <Link
             href="/#kategoriler"

@@ -9,6 +9,8 @@ import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import { WhatsAppIcon } from "./components/WhatsAppIcon";
+import { ScrollReveal } from "./components/ScrollReveal";
+import { HeroVideo } from "./components/HeroVideo";
 
 const heroStats = [
   "Strafor modeller",
@@ -18,10 +20,10 @@ const heroStats = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fffaf8] text-[#2d2430]">
-      <SiteHeader />
+    <main className="home-page min-h-screen bg-[#fffaf8] text-[#2d2430]">
+      <SiteHeader /><ScrollReveal /><HeroVideo />
 
-      <section className="relative overflow-hidden pt-28 sm:pt-32">
+      <section data-reveal className="home-hero relative overflow-hidden pt-28 sm:pt-32">
         <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-[#f8d7e6]/45 via-[#fffaf8] to-transparent" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pb-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:pb-24">
           <div className="max-w-xl">
@@ -87,7 +89,7 @@ export default function Home() {
                 <p className="mt-3 text-sm leading-6 text-[#745f78]">
                   Hoş geldin bebek, kız bebek, erkek bebek ve hediyelik
                   seçenekleri düzenli bir vitrin akışıyla sunulur; müşteri
-                  beğendiğini hızlıca WhatsApp'tan sorar.
+                  beğendiğini hızlıca WhatsApp&apos;tan sorar.
                 </p>
               </div>
             </div>
@@ -95,7 +97,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-[#eadfea] bg-white py-8">
+      <section data-reveal className="border-y border-[#eadfea] bg-white py-8">
         <div className="mx-auto grid max-w-6xl gap-4 px-5 sm:grid-cols-3">
           {trustItems.map((item) => (
             <div
@@ -115,7 +117,8 @@ export default function Home() {
 
       <section
         id="kategoriler"
-        className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20"
+        data-reveal
+        className="category-section mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20"
       >
         <div className="mb-9 max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b78296]">
@@ -140,7 +143,7 @@ export default function Home() {
               <Link
                 key={category.slug}
                 href={`/${category.slug}`}
-                className="group overflow-hidden rounded-2xl border border-[#eadfea] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#c8b6ff]/15"
+                className="group overflow-hidden rounded-2xl border border-[#eadfea] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl hover:shadow-[#c8b6ff]/15"
               >
                 <div className="relative aspect-[4/3.3] overflow-hidden bg-[#f7eef5]">
                   <img
@@ -169,7 +172,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f5eef7] py-16 lg:py-20">
+      <section data-reveal className="featured-section bg-[#f5eef7] py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="mb-9 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div className="max-w-2xl">
@@ -194,13 +197,13 @@ export default function Home() {
             {productItems.map((item) => (
               <article
                 key={item.title}
-                className="overflow-hidden rounded-2xl border border-white bg-white shadow-sm"
+                className="group overflow-hidden rounded-2xl border border-white bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#c8b6ff]/15"
               >
                 <div className="aspect-[4/4.35] overflow-hidden bg-[#f7eef5]">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-5">
@@ -227,7 +230,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+      <section data-reveal className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="rounded-[28px] bg-[#70528f] px-6 py-10 text-center text-white sm:px-10 sm:py-14">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#f8d7e6]">
             Luniva ile
@@ -245,7 +248,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-5 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white"
           >
-            <WhatsAppIcon className="h-4 w-4" /> WhatsApp'tan sipariş
+            <WhatsAppIcon className="h-4 w-4" /> WhatsApp&apos;tan sipariş
           </a>
         </div>
       </section>

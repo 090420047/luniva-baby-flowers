@@ -275,17 +275,13 @@ const page = (
 
 export const infoPages = {
   hakkimizda: page(
-    "hakkimizda",
-    "Kurumsal",
-    "Hakkımızda",
-    "Luniva Baby & Flowers; bebek karşılama hediyelerini, çiçeklerin zarafeti ve kişiye özel dokunuşlarla hazırlayan bir markadır.",
+    "hakkimizda", "Kurumsal", "Luniva Baby & Flowers Hakk\u0131nda",
+    "Luniva Baby & Flowers, yeni bir hayata merhaba denilen en \u00f6zel g\u00fcnlerde ailelerin heyecan\u0131na e\u015flik etmek i\u00e7in do\u011fdu. Bebek do\u011fumu, hastane kar\u015f\u0131lamas\u0131 ve ilk ziyaretler i\u00e7in \u00e7i\u00e7ek aranjmanlar\u0131ndan isme \u00f6zel hediyelere, kap\u0131 s\u00fcslerinden zarif buketlere kadar pek \u00e7ok tasar\u0131m haz\u0131rl\u0131yoruz.",
     [
-      {
-        title: "Marka yaklaşımı",
-        body: [
-          "Her tasarımı fotoğraflara yakışan, sevgi dolu bir hatıraya dönüştürmeyi hedefliyoruz.",
-        ],
-      },
+      { title: "\u0130ki - \u00fc\u00e7 y\u0131ll\u0131k eme\u011fin do\u011fu\u015fu", body: ["Luniva'n\u0131n hik\u00e2yesi, yakla\u015f\u0131k iki - \u00fc\u00e7 y\u0131ld\u0131r sevgiyle geli\u015ftirilen el eme\u011fi tasar\u0131m tutkusundan do\u011fdu. Her sipari\u015fte daha iyi bir detay, daha zarif bir renk uyumu ve daha mutlu bir hat\u0131ra olu\u015fturmak i\u00e7in kendimizi geli\u015ftiriyoruz.", "Bu s\u00fcre\u00e7te bebek hediyesinin yaln\u0131zca g\u00fczel bir nesne de\u011fil; aileye kalan s\u0131cac\u0131k bir an\u0131 oldu\u011funa inand\u0131k."] },
+      { title: "Neden el yap\u0131m\u0131?", body: ["El yap\u0131m\u0131 tasar\u0131mlar isme, renge, mevsime ve sizin hayalinize g\u00f6re \u015fekillenir. Seri \u00fcretimde kaybolan o \u00f6zel his; her \u00e7i\u00e7e\u011fin yerle\u015ftirili\u015finde, her kurdelenin se\u00e7iminde ve her isim detay\u0131nda yeniden ortaya \u00e7\u0131kar.", "Her aranjman\u0131 size ait bir hik\u00e2ye gibi ele al\u0131yor, foto\u011fraflara ve hat\u0131ralara yak\u0131\u015fan bir b\u00fct\u00fcn olu\u015fturuyoruz."] },
+      { title: "Kim haz\u0131rl\u0131yor?", body: ["Sipari\u015fleriniz, her ayr\u0131nt\u0131ya son derece emek veren de\u011ferli eller taraf\u0131ndan tek tek haz\u0131rlan\u0131r. Tasar\u0131m\u0131n\u0131z; se\u00e7ti\u011finiz renklerden bebe\u011fin ismine kadar dikkatle kontrol edilir.", "Amac\u0131m\u0131z, hediyeniz ula\u015ft\u0131\u011f\u0131nda hem sizin hem de sevdiklerinizin y\u00fcz\u00fcnde samimi bir tebess\u00fcm olu\u015fturmakt\u0131r."] },
+      { title: "Neler haz\u0131rl\u0131yoruz?", body: ["Ho\u015f Geldin Bebek aranjmanlar\u0131, isme \u00f6zel kap\u0131 s\u00fcsleri, \u00e7i\u00e7ekli hediye kutular\u0131, hastane odas\u0131 s\u00fcsleri, yeni do\u011fan buketleri ve minik kutlamalara yak\u0131\u015fan ki\u015fiselle\u015ftirilmi\u015f hediyeler haz\u0131rl\u0131yoruz."] },
     ]
   ),
   "sik-sorulan-sorular": page(
