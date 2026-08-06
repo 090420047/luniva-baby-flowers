@@ -30,7 +30,7 @@ export const productCategories = [
     title: "İsme Özel Tasarımlar",
     shortTitle: "İsme Özel",
     description:
-      "Bebek adı, renk paleti, figür ve not detaylarıyla kişiselleştirilebilen özel modeller.",
+      "Kuğu formunda hazırlanan, isim ve renk detayıyla kişiye özel uyarlanabilen zarif bebek tasarımları.",
     image: "/luniva/blue-swan-lake.png",
   },
   {
@@ -78,9 +78,8 @@ export const productItems: ProductItem[] = [
     categories: [
       "hos-geldin-bebek-hediyeleri",
       "kiz-bebek-modelleri",
-      "isme-ozel-tasarimlar",
     ],
-    tags: ["Strafor model", "Pembe", "İsme özel"],
+    tags: ["Strafor model", "Pembe", "İnci detay"],
   },
   {
     title: "Ay yıldızlı mavi bebek modeli",
@@ -90,7 +89,6 @@ export const productItems: ProductItem[] = [
     categories: [
       "hos-geldin-bebek-hediyeleri",
       "erkek-bebek-modelleri",
-      "isme-ozel-tasarimlar",
     ],
     tags: ["Ay formu", "Mavi", "Strafor model"],
   },
@@ -114,11 +112,81 @@ export const productItems: ProductItem[] = [
     tags: ["Bebek arabası", "Pembe", "İnci detay"],
   },
   {
+    title: "Mavi gemi hoş geldin bebek",
+    summary:
+      "Gemi formu, denizci ayıcık, deniz feneri ve mavi papatya detaylarıyla hazırlanan erkek bebek modeli.",
+    image: "/luniva/welcome-blue-boat.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "erkek-bebek-modelleri",
+    ],
+    tags: ["Gemi formu", "Mavi", "Denizci konsept"],
+  },
+  {
+    title: "Pembe bulut ayıcıklı model",
+    summary:
+      "Bulut formu, pembe yıldız, ayıcık ve pastel çiçeklerle hazırlanan yumuşak kız bebek tasarımı.",
+    image: "/luniva/welcome-pink-cloud.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "kiz-bebek-modelleri",
+    ],
+    tags: ["Bulut formu", "Pembe", "Ayıcıklı"],
+  },
+  {
+    title: "Pembe kulübe hoş geldin bebek",
+    summary:
+      "Çitli minik ev formu, pembe çatı, ayıcık ve çiçeklerle hazırlanan dekoratif bebek hediyesi.",
+    image: "/luniva/welcome-pink-cottage.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "kiz-bebek-modelleri",
+    ],
+    tags: ["Kulübe formu", "Pembe", "Çiçekli"],
+  },
+  {
+    title: "Pembe biberon sepet modeli",
+    summary:
+      "Biberon formunda, minik peluşlar ve pembe çiçeklerle dolu sevimli hoş geldin bebek aranjmanı.",
+    image: "/luniva/welcome-baby-bottle-pink.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "kiz-bebek-modelleri",
+    ],
+    tags: ["Biberon formu", "Pembe", "Peluş detay"],
+  },
+  {
+    title: "Mavi sepet ayıcıklı model",
+    summary:
+      "Mavi saplı sepet formu, ayıcık, biberon ve papatya detaylarıyla erkek bebek için sade bir model.",
+    image: "/luniva/welcome-blue-basket.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "erkek-bebek-modelleri",
+    ],
+    tags: ["Sepet formu", "Mavi", "Ayıcıklı"],
+  },
+  {
+    title: "Krem beşik sepet tasarımı",
+    summary:
+      "Krem tonlu beşik sepet formu, inci, dantel ve ayıcık detaylarıyla hazırlanan zarif bebek hediyesi.",
+    image: "/luniva/welcome-cream-cradle.png",
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "kiz-bebek-modelleri",
+      "erkek-bebek-modelleri",
+    ],
+    tags: ["Beşik sepet", "Krem", "İnci detay"],
+  },
+  {
     title: "Sallanan at pembe model",
     summary:
       "Sallanan at formunda, pembe çiçekler ve ayıcık detayıyla hazırlanan özel gün bebek hediyesi.",
     image: "/luniva/generated-rocking-horse-pink.png",
-    categories: ["kiz-bebek-modelleri", "hediyelik-ve-ozel-gun"],
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "kiz-bebek-modelleri",
+    ],
     tags: ["Sallanan at", "Pembe", "Özel gün"],
   },
   {
@@ -142,12 +210,12 @@ export const productItems: ProductItem[] = [
       "erkek-bebek-modelleri",
       "isme-ozel-tasarimlar",
     ],
-    tags: ["Kuğu", "Mavi", "İsim yazısı"],
+    tags: ["Kuğu", "Mavi", "Strafor model"],
   },
   {
     title: "Lila kuğu oda sunumu",
     summary:
-      "Bebek odası atmosferine yakışan, lila çiçekli ve isme özel kuğu aranjmanı.",
+      "Bebek odası atmosferine yakışan, lila çiçekli ve zarif kuğu aranjmanı.",
     image: "/luniva/purple-swan-nursery.png",
     categories: [
       "hos-geldin-bebek-hediyeleri",
@@ -164,6 +232,7 @@ export const productItems: ProductItem[] = [
     categories: [
       "hos-geldin-bebek-hediyeleri",
       "erkek-bebek-modelleri",
+      "isme-ozel-tasarimlar",
     ],
     tags: ["Mavi", "Sarı çiçek", "Strafor model"],
   },
@@ -172,7 +241,10 @@ export const productItems: ProductItem[] = [
     summary:
       "Elde taşındığında dolu ve özenli görünen, ziyaret hediyesi olarak düşünülebilecek aranjman.",
     image: "/luniva/family-gift.png",
-    categories: ["hediyelik-ve-ozel-gun"],
+    categories: [
+      "hos-geldin-bebek-hediyeleri",
+      "erkek-bebek-modelleri",
+    ],
     tags: ["Hediyelik", "Ziyaret hediyesi", "Fotoğraf sunumu"],
   },
   {

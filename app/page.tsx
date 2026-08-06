@@ -84,12 +84,12 @@ export default function Home() {
               </div>
               <div className="rounded-[28px] bg-[#e9ddf0] p-6 text-[#70528f] sm:p-7">
                 <p className="font-serif text-2xl leading-tight">
-                  Her model kendi hikayesiyle öne çıksın.
+                  Zarif bir hediye, en özel ana eşlik etsin.
                 </p>
                 <p className="mt-3 text-sm leading-6 text-[#745f78]">
-                  Hoş geldin bebek, kız bebek, erkek bebek ve hediyelik
-                  seçenekleri düzenli bir vitrin akışıyla sunulur; müşteri
-                  beğendiğini hızlıca WhatsApp&apos;tan sorar.
+                  El emeği bebek aranjmanları, kuğulu tasarımlar ve dekoratif
+                  hediyelikler renkleriyle öne çıkar. Her parça, güzel bir
+                  anıya dönüşmesi için özenle hazırlanır.
                 </p>
               </div>
             </div>
