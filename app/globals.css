@@ -8,13 +8,14 @@
   --sky: #bee8ff;
   --cream: #fff6ee;
   --gold: #e7cda6;
-  --font-sans-system: Arial, Helvetica, sans-serif;
+  --font-sans-system: "Aptos", "Avenir Next", "Segoe UI", sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans-system);
+  --font-serif: "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
 
 * {
@@ -256,3 +257,48 @@ a svg {
 .search-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: start center; padding: 96px 20px 20px; }
 .search-backdrop { position: absolute; inset: 0; border: 0; background: rgba(45, 36, 48, .32); backdrop-filter: blur(4px); }
 .search-panel { position: relative; width: min(590px, 100%); border: 1px solid rgba(255,255,255,.8); border-radius: 24px; background: #fff; padding: 24px; box-shadow: 0 22px 64px rgba(45,36,48,.22); }
+
+
+.order-section { min-height: 520px; box-shadow: 0 20px 50px rgba(92, 65, 104, .14); }
+.order-photo-flow { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; height: 520px; overflow: hidden; padding: 18px; background: linear-gradient(135deg, #e7d8ee, #f8dce8); }
+.order-photo-flow::before, .order-photo-flow::after { content: ""; position: absolute; z-index: 2; right: 0; left: 0; height: 64px; pointer-events: none; }
+.order-photo-flow::before { top: 0; background: linear-gradient(#e7d8ee, transparent); }
+.order-photo-flow::after { bottom: 0; background: linear-gradient(transparent, #f8dce8); }
+.order-photo-track { display: flex; flex-direction: column; gap: 14px; will-change: transform; }
+.order-photo-track img { width: 100%; aspect-ratio: .83; border-radius: 18px; object-fit: cover; box-shadow: 0 8px 18px rgba(78, 54, 82, .14); }
+.order-photo-track-up { animation: order-flow-up 24s linear infinite; }
+.order-photo-track-down { animation: order-flow-down 26s linear infinite; }
+.order-photo-flow:hover .order-photo-track { animation-play-state: paused; }
+@keyframes order-flow-up { from { transform: translateY(-42%); } to { transform: translateY(0); } }
+@keyframes order-flow-down { from { transform: translateY(0); } to { transform: translateY(-42%); } }
+@media (max-width: 1023px) { .order-photo-flow { height: 400px; } .order-section { min-height: auto; } }
+@media (max-width: 640px) { .order-photo-flow { height: 300px; gap: 10px; padding: 12px; } .order-photo-track { gap: 10px; } .order-photo-track img { border-radius: 14px; } }
+
+.order-photo-flow-page { border-radius: 24px; box-shadow: 0 14px 34px rgba(92, 65, 104, .12); }
+
+
+/* Order page: flowing gallery sits beside the content, not in a separate panel */
+.order-page .order-photo-flow-page {
+  position: absolute;
+  top: 128px;
+  right: 32px;
+  width: 36%;
+  height: 570px;
+  padding: 0;
+  gap: 12px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+.order-page .order-photo-flow-page::before { height: 74px; background: linear-gradient(#fffaf8, rgba(255,250,248,0)); }
+.order-page .order-photo-flow-page::after { height: 74px; background: linear-gradient(rgba(255,250,248,0), #fffaf8); }
+.order-page .order-photo-flow-page .order-photo-track { gap: 12px; }
+.order-page .order-photo-flow-page .order-photo-track img { border-radius: 8px; box-shadow: 0 8px 20px rgba(78, 54, 82, .12); }
+.order-page > :is(a, p, h1, .order-page-content, .order-page-actions) { max-width: 58%; }
+.order-page > h1 { font-size: clamp(2.5rem, 4.2vw, 4.25rem); }
+@media (max-width: 1023px) {
+  .order-page .order-photo-flow-page { position: relative; top: auto; right: auto; width: 100%; height: 360px; margin-top: 28px; }
+  .order-page > :is(a, p, h1, .order-page-content, .order-page-actions) { max-width: none; }
+}
+
+.font-serif { font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif; }

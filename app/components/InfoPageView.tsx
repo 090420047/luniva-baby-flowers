@@ -6,14 +6,16 @@ import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { ScrollReveal } from "./ScrollReveal";
+import { OrderPhotoFlow } from "./OrderPhotoFlow";
 
 export function InfoPageView({ page }: { page: InfoPageContent }) {
+  const isOrderPage = page.slug === "siparis";
   return (
     <main className="min-h-screen bg-[#fffaf8] text-[#2d2430]">
       <SiteHeader />
       <ScrollReveal />
 
-      <section data-reveal className="mx-auto max-w-5xl px-5 pb-16 pt-32 lg:px-8">
+      <section data-reveal className={isOrderPage ? "order-page relative mx-auto max-w-7xl px-5 pb-16 pt-32 lg:px-8" : "mx-auto max-w-5xl px-5 pb-16 pt-32 lg:px-8"}>
         <Link
           href="/"
           className="text-xs font-bold uppercase tracking-[0.14em] text-[#b78296] transition hover:text-[#7e62a6]"
@@ -36,7 +38,9 @@ export function InfoPageView({ page }: { page: InfoPageContent }) {
           </div>
         ) : null}
 
-        <div className="mt-10 grid gap-5">
+        {isOrderPage ? <OrderPhotoFlow /> : null}
+
+        <div className={isOrderPage ? "mt-10 grid gap-5 order-page-content" : "mt-10 grid gap-5"}>
           {page.sections.map((section) => (
             <section
               key={section.title}
@@ -56,7 +60,7 @@ export function InfoPageView({ page }: { page: InfoPageContent }) {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+        <div className={isOrderPage ? "order-page-actions mt-10 flex flex-col gap-3 sm:flex-row" : "mt-10 flex flex-col gap-3 sm:flex-row"}>
           <a
             href={whatsappHref}
             target="_blank"
@@ -67,7 +71,7 @@ export function InfoPageView({ page }: { page: InfoPageContent }) {
             WhatsApp&apos;tan Yaz
           </a>
           <Link
-            href="/#kategoriler"
+            href="/kategoriler"
             className="inline-flex items-center justify-center rounded-xl border border-[#c8b6ff]/70 bg-white px-5 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-[#7e62a6] transition hover:-translate-y-1"
           >
             Kategorileri İncele
