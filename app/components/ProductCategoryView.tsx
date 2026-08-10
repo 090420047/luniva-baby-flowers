@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ProductCategorySlug } from "../site-content";
 import {
   getProductsByCategory,
+  productItems,
   productCategories,
   productCategoryMap,
   whatsappHref,
@@ -24,7 +25,7 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
 
       <section data-reveal className="mx-auto max-w-7xl px-5 pb-16 pt-32 lg:px-8">
         <Link
-          href="/#kategoriler"
+          href="/kategoriler"
           className="text-xs font-bold uppercase tracking-[0.14em] text-[#b78296] transition hover:text-[#7e62a6]"
         >
           Kategorilere dön
@@ -32,7 +33,7 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
 
         <div className="mt-7 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b78296]">
+            <p className="section-kicker text-xs font-bold uppercase text-[#b78296]">
               Kategori
             </p>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-[#7e62a6] lg:text-5xl">
@@ -56,16 +57,16 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
             {products.map((item) => (
               <article
                 key={item.title}
-                className="group overflow-hidden rounded-2xl border border-[#eadfea] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#c8b6ff]/15"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#eadfea] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#c8b6ff]/15"
               >
-                <div className="aspect-[4/4.35] overflow-hidden bg-[#f7eef5]">
+                <Link href={`/urun/${productItems.indexOf(item)}`} className="block aspect-[4/4.35] overflow-hidden bg-[#f7eef5]">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                </div>
-                <div className="p-5">
+                </Link>
+                <div className="flex flex-1 flex-col p-5">
                   <div className="mb-4 flex flex-wrap gap-2">
                     {item.tags.map((tag) => (
                       <span
@@ -76,27 +77,31 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
                       </span>
                     ))}
                   </div>
-                  <h2 className="font-serif text-xl font-semibold text-[#514153]">
-                    {item.title}
-                  </h2>
+                  <Link href={`/urun/${productItems.indexOf(item)}`} className="font-serif text-xl font-semibold text-[#514153] transition hover:text-[#70528f]">{item.title}</Link>
                   <p className="mt-2 text-sm leading-6 text-[#6d616d]">
                     {item.summary}
                   </p>
-                  <a
-                    href={whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#1fbd5b]"
-                  >
-                    <WhatsAppIcon className="h-4 w-4" /> Bu modeli sor
-                  </a>
+                  <div className="mt-auto grid gap-3 pt-6 sm:grid-cols-[1fr_auto] sm:items-center">
+                    <Link href={`/urun/${productItems.indexOf(item)}`} className="group/detail flex items-center justify-between rounded-2xl bg-[#70528f] px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-lg shadow-[#c8b6ff]/20 transition duration-300 hover:-translate-y-0.5 hover:bg-[#5f427d]">
+                      <span>{"\u00dcr\u00fcn detaylar\u0131"}</span>
+                      <span aria-hidden="true" className="grid h-7 w-7 place-items-center rounded-full bg-white/20 text-base transition duration-300 group-hover/detail:translate-x-1 group-hover/detail:bg-white group-hover/detail:text-[#70528f]">→</span>
+                    </Link>
+                    <a
+                      href={whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/whatsapp inline-flex items-center justify-center gap-2 border-b-2 border-[#25d366] px-2 py-3 text-xs font-bold uppercase tracking-[0.1em] text-[#168f45] transition duration-300 hover:border-[#168f45] hover:text-[#0f7235]"
+                    >
+                      <WhatsAppIcon className="h-4 w-4 transition duration-300 group-hover/whatsapp:scale-110" />{"Sor"}
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}
           </div>
         ) : (
           <div className="mt-12 rounded-[28px] border border-[#eadfea] bg-white p-8 text-center shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b78296]">
+            <p className="section-kicker text-xs font-bold uppercase text-[#b78296]">
               Yakında
             </p>
             <h2 className="mt-3 font-serif text-3xl font-semibold text-[#70528f]">

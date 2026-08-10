@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { trustItems, whatsappHref } from "./site-content";
+import { productItems, trustItems, whatsappHref } from "./site-content";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
@@ -13,6 +13,14 @@ const heroStats = [
   "WhatsApp sipari\u015f",
 ];
 
+const featuredProducts = [productItems[0], productItems[2], productItems[19]];
+
+const orderSteps = [
+  { number: "01", title: "Modelinizi seçin", text: "Koleksiyonlardan size en yakın tasarımı seçin veya ilham görselinizi paylaşın." },
+  { number: "02", title: "Detayları belirleyelim", text: "Renk, isim, not ve teslimat tercihinizi WhatsApp üzerinden birlikte netleştirelim." },
+  { number: "03", title: "Sevgiyle hazırlayalım", text: "Her parça özenle tamamlanır; sizin için güzel bir karşılama anısına dönüşür." },
+];
+
 export default function Home() {
   return (
     <main className="home-page min-h-screen bg-[#fffaf8] text-[#2d2430]">
@@ -24,7 +32,7 @@ export default function Home() {
         <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-[#f8d7e6]/45 via-[#fffaf8] to-transparent" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pb-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:pb-24">
           <div className="max-w-xl">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b78296]">Luniva Baby &amp; Flowers</p>
+            <p className="section-kicker text-xs font-bold uppercase text-[#b78296]">Luniva Baby &amp; Flowers</p>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-[1.05] text-[#70528f] sm:text-5xl lg:text-6xl">{"Bebek hediyeleri ve \u00f6zel g\u00fcn tasar\u0131mlar\u0131."}</h1>
             <p className="mt-5 max-w-lg text-base leading-7 text-[#5f535f]">{"Sizin ve bebe\u011finiz i\u00e7in sevgiyle haz\u0131rlanan aranjmanlar, isme \u00f6zel tasar\u0131mlar ve unutulmaz hediyeler."}</p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -32,7 +40,7 @@ export default function Home() {
               <Link href="/siparis" className="inline-flex items-center justify-center rounded-xl border border-[#c8b6ff]/70 bg-white px-5 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-[#70528f] transition hover:-translate-y-0.5">{"Sipari\u015f ver"}</Link>
             </div>
             <div className="mt-9 flex flex-wrap gap-3 text-sm font-semibold text-[#786778]">
-              {heroStats.map((item) => <span key={item} className="rounded-full border border-[#eadfea] bg-white/80 px-4 py-2">{item}</span>)}
+              {heroStats.map((item, index) => <span key={item} className={index === 1 ? "gold-accent rounded-full px-4 py-2" : "rounded-full border border-[#eadfea] bg-white/80 px-4 py-2"}>{item}</span>)}
             </div>
           </div>
 
@@ -46,13 +54,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section data-reveal className="border-y border-[#eadfea] bg-white py-8">
+      <section data-reveal className="home-trust border-y border-[#eadfea] py-8">
         <div className="mx-auto grid max-w-7xl gap-4 px-5 lg:px-8 sm:grid-cols-3">{trustItems.map((item) => <div key={item.title} className="rounded-xl border border-[#f0e4ef] bg-[#fffaf8] px-5 py-4 text-center shadow-sm shadow-[#e8d9e8]/30"><p className="text-xs font-bold uppercase tracking-[0.12em] text-[#9d6780]">{item.title}</p><p className="mt-2 text-sm leading-6 text-[#6d616d]">{item.text}</p></div>)}</div>
       </section>
 
-      <section data-reveal className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+      <section data-reveal className="home-featured featured-section border-y border-[#eadfea] py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div><p className="section-kicker text-xs font-bold uppercase text-[#b78296]">{"Öne çıkan tasarımlar"}</p><h2 className="mt-3 font-serif text-3xl font-semibold text-[#70528f] sm:text-4xl">{"İlk bakışta kalbe dokunan modeller."}</h2></div>
+            <Link href="/hos-geldin-bebek-hediyeleri" className="inline-flex w-fit items-center gap-2 text-sm font-bold text-[#70528f] transition hover:text-[#b78296]">{"Tüm modeller"}<span aria-hidden="true">→</span></Link>
+          </div>
+          <div className="mt-9 grid gap-6 md:grid-cols-3">
+            {featuredProducts.map((product) => (
+              <Link key={product.title} href={`/urun/${productItems.indexOf(product)}`} className="group overflow-hidden rounded-[26px] border bg-white transition duration-300 hover:-translate-y-1">
+                <div className="aspect-[4/4.25] overflow-hidden"><img src={product.image} alt={product.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" /></div>
+                <div className="p-6"><div className="flex flex-wrap gap-2">{product.tags.slice(0, 2).map((tag) => <span key={tag} className="rounded-full bg-[#fff6ee] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-[#9d6780]">{tag}</span>)}</div><h3 className="mt-4 font-serif text-2xl font-semibold text-[#514153]">{product.title}</h3><p className="mt-2 text-sm leading-6 text-[#6d616d]">{product.summary}</p><span className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#70528f]">{"Ürünü keşfet"}<span aria-hidden="true">→</span></span></div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section data-reveal className="home-order py-20 lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-9 px-5 sm:px-8 lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:px-8">
+          <div className="home-order-card grid gap-9 rounded-[30px] p-7 sm:p-10 lg:col-span-2 lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:p-14">
+          <div><p className="section-kicker text-xs font-bold uppercase text-[#8b7194]">{"Sipariş yolculuğu"}</p><h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#70528f] sm:text-4xl">{"Düşünceden hediyeye, üç zarif adım."}</h2><p className="mt-4 max-w-md text-sm leading-7 text-[#655865]">{"Hayalinizdeki tasarımı paylaşın; tüm detayları birlikte planlayıp sizin için hazırlayalım."}</p><Link href="/siparis" className="mt-7 inline-flex rounded-xl bg-[#70528f] px-5 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#5f427d]">{"Sipariş rehberine git"}</Link></div>
+            <div className="grid gap-4 sm:grid-cols-3">{orderSteps.map((step) => <div key={step.number} className="rounded-2xl border border-white/80 bg-white/80 p-5"><span className="font-serif text-2xl text-[#c79b4c]">{step.number}</span><h3 className="mt-5 font-serif text-xl font-semibold text-[#70528f]">{step.title}</h3><p className="mt-3 text-sm leading-6 text-[#655865]">{step.text}</p></div>)}</div>
+          </div>
+        </div>
+      </section>
+
+      <section data-reveal className="home-cta-section mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="rounded-[30px] bg-[#70528f] px-7 py-10 text-white sm:px-10 sm:py-14">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#f8d7e6]">{"Luniva\u2019y\u0131 ke\u015ffedin"}</p>
+          <p className="section-kicker text-xs font-bold uppercase text-[#f8d7e6]">{"Luniva\u2019y\u0131 ke\u015ffedin"}</p>
           <div className="mt-3 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"><div><h2 className="max-w-2xl font-serif text-3xl font-semibold leading-tight sm:text-4xl">{"Her sayfada sizi ayr\u0131 bir koleksiyon ve deneyim kar\u015f\u0131las\u0131n."}</h2><p className="mt-4 max-w-xl text-sm leading-7 text-white/80">{"Koleksiyonlar\u0131 inceleyin ya da sipari\u015finizi bizimle birlikte planlay\u0131n."}</p></div><div className="flex flex-col gap-3 sm:flex-row"><Link href="/kategoriler" className="rounded-xl bg-white px-5 py-3.5 text-center text-xs font-bold uppercase tracking-[0.12em] text-[#70528f]">{"Kategorilere git"}</Link><a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25d366] px-5 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white"><WhatsAppIcon className="h-4 w-4" />{"Bize yaz\u0131n"}</a></div></div>
         </div>
       </section>

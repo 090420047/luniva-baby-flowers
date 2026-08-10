@@ -19,9 +19,15 @@ export function SearchButton() {
   const results = useMemo<Result[]>(() => {
     const value = query.trim().toLocaleLowerCase("tr-TR");
     if (!value) return [];
-    const categories = productCategories.filter((item) => (item.title + item.description).toLocaleLowerCase("tr-TR").includes(value)).map((item) => ({ label: item.title, href: "/" + item.slug, type: "Kategori" }));
-    const products = productItems.filter((item) => (item.title + item.summary + item.tags.join(" ")).toLocaleLowerCase("tr-TR").includes(value)).slice(0, 5).map((item) => ({ label: item.title, href: "/" + item.categories[0], type: "Model" }));
-    return [...categories, ...products].slice(0, 7);
+    const products = productItems
+      .map((item, index) => ({ item, index }))
+      .filter(({ item }) => (item.title + item.summary + item.tags.join(" ")).toLocaleLowerCase("tr-TR").includes(value))
+      .slice(0, 5)
+      .map(({ item, index }) => ({ label: item.title, href: "/urun/" + index, type: "Ürün" }));
+    const categories = productCategories
+      .filter((item) => (item.title + item.description).toLocaleLowerCase("tr-TR").includes(value))
+      .map((item) => ({ label: item.title, href: "/" + item.slug, type: "Kategori" }));
+    return [...products, ...categories].slice(0, 7);
   }, [query]);
 
   return (
