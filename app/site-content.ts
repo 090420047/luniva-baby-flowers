@@ -3,7 +3,7 @@ export const contactEmail = "lunivababyflowers@gmail.com";
 export const mailtoHref = `mailto:${contactEmail}`;
 export const instagramUsername = "lunivababyflowers";
 export const instagramHref = `https://www.instagram.com/${instagramUsername}/`;
-export const whatsappNumber = "905555555555";
+export const whatsappNumber = "905349581166";
 export const whatsappMessage = encodeURIComponent(
   "Merhaba Luniva Baby & Flowers, sipariş vermek istiyorum."
 );
