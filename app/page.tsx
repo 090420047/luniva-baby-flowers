@@ -39,8 +39,8 @@ export default function Home() {
               <Link href="/kategoriler" className="inline-flex items-center justify-center rounded-xl bg-[#7e62a6] px-5 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-lg shadow-[#7e62a6]/20 transition hover:-translate-y-0.5 hover:bg-[#70528f]">{"Kategorileri g\u00f6r"}</Link>
               <Link href="/siparis" className="inline-flex items-center justify-center rounded-xl border border-[#c8b6ff]/70 bg-white px-5 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-[#70528f] transition hover:-translate-y-0.5">{"Sipari\u015f ver"}</Link>
             </div>
-            <div className="mt-9 flex flex-wrap gap-3 text-sm font-semibold text-[#786778]">
-              {heroStats.map((item, index) => <span key={item} className={index === 1 ? "gold-accent rounded-full px-4 py-2" : "rounded-full border border-[#eadfea] bg-white/80 px-4 py-2"}>{item}</span>)}
+            <div className="mt-9 flex flex-wrap gap-3 text-sm font-semibold">
+              {heroStats.map((item, index) => <span key={item} className={`home-hero-stat rounded-full px-4 py-2${index === 1 ? " home-hero-stat-accent" : ""}`}>{item}</span>)}
             </div>
           </div>
 
@@ -79,7 +79,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-9 px-5 sm:px-8 lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:px-8">
           <div className="home-order-card grid gap-9 rounded-[30px] p-7 sm:p-10 lg:col-span-2 lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:p-14">
           <div><p className="section-kicker text-xs font-bold uppercase text-[#8b7194]">{"Sipariş yolculuğu"}</p><h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#70528f] sm:text-4xl">{"Düşünceden hediyeye, üç zarif adım."}</h2><p className="mt-4 max-w-md text-sm leading-7 text-[#655865]">{"Hayalinizdeki tasarımı paylaşın; tüm detayları birlikte planlayıp sizin için hazırlayalım."}</p><Link href="/siparis" className="mt-7 inline-flex rounded-xl bg-[#70528f] px-5 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#5f427d]">{"Sipariş rehberine git"}</Link></div>
-            <div className="grid gap-4 sm:grid-cols-3">{orderSteps.map((step) => <div key={step.number} className="rounded-2xl border border-white/80 bg-white/80 p-5"><span className="font-serif text-2xl text-[#c79b4c]">{step.number}</span><h3 className="mt-5 font-serif text-xl font-semibold text-[#70528f]">{step.title}</h3><p className="mt-3 text-sm leading-6 text-[#655865]">{step.text}</p></div>)}</div>
+            <div className="grid gap-4 sm:grid-cols-3">{orderSteps.map((step) => <div key={step.number} className="home-order-step rounded-2xl p-5"><span className="home-order-step-number font-serif text-2xl">{step.number}</span><h3 className="home-order-step-title mt-5 font-serif text-xl font-semibold">{step.title}</h3><p className="home-order-step-text mt-3 text-sm leading-6">{step.text}</p></div>)}</div>
           </div>
         </div>
       </section>

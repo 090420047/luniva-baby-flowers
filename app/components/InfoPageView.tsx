@@ -1,16 +1,18 @@
 import Link from "next/link";
 import type { InfoPageContent } from "../site-content";
-import { whatsappHref } from "../site-content";
+import { contactEmail, instagramHref, instagramUsername, mailtoHref, whatsappHref } from "../site-content";
 import { FloatingWhatsApp } from "./FloatingWhatsApp";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { InstagramIcon } from "./InstagramIcon";
 import { ScrollReveal } from "./ScrollReveal";
 import { OrderPhotoFlow } from "./OrderPhotoFlow";
 
 export function InfoPageView({ page }: { page: InfoPageContent }) {
   const isOrderPage = page.slug === "siparis";
   const isContactPage = page.slug === "iletisim";
+  const isInstagramPage = page.slug === "instagram";
   const isEditorialPage = !isOrderPage && !isContactPage;
   return (
     <main className="min-h-screen bg-[#fffaf8] text-[#2d2430]">
@@ -58,6 +60,8 @@ export function InfoPageView({ page }: { page: InfoPageContent }) {
                     {paragraph}
                   </p>
                 ))}
+                {(isContactPage || isInstagramPage) && section.title === "Instagram" ? <a href={instagramHref} target="_blank" rel="noopener noreferrer" className="contact-map-link">@{instagramUsername} hesabını aç →</a> : null}
+                {isContactPage && section.title === "E-posta" ? <a href={mailtoHref} className="contact-map-link">{contactEmail} adresine mail gönder →</a> : null}
                 {isContactPage && section.title === "Adres" ? <a href="https://www.google.com/maps/search/?api=1&query=Melik%C5%9Fah%20Mahallesi%20H%C3%BCy%C3%BCkl%C3%BC%20Sokak%20No%3A%2019%2FB%20Meram%20Konya" target="_blank" rel="noopener noreferrer" className="contact-map-link">Haritada yol tarifi al →</a> : null}
               </div>
             </section>
@@ -65,6 +69,7 @@ export function InfoPageView({ page }: { page: InfoPageContent }) {
         </div>
 
         {isContactPage ? <div className="mt-10 flex"><a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 rounded-xl bg-[#25d366] px-5 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-xl shadow-[#25d366]/20 transition hover:-translate-y-1"><WhatsAppIcon className="h-5 w-5" />WhatsApp&apos;tan Yaz</a></div> : null}
+        {isInstagramPage ? <div className="mt-10 flex"><a href={instagramHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 rounded-xl bg-[#70528f] px-5 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-xl shadow-[#70528f]/20 transition hover:-translate-y-1 hover:bg-[#5f427d]"><InstagramIcon className="h-5 w-5" />Instagram&apos;da Takip Et</a></div> : null}
       </section>
 
       <SiteFooter />

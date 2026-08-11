@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { footerColumns, siteName, whatsappHref } from "../site-content";
+import { contactEmail, footerColumns, instagramHref, instagramUsername, mailtoHref, siteName, whatsappHref } from "../site-content";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { InstagramIcon } from "./InstagramIcon";
 import { BackToTop } from "./BackToTop";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -16,12 +17,23 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-3">
               {column.links.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm font-semibold text-[#655865] transition hover:text-[#b78296]"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.href.startsWith("http") ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-[#655865] transition hover:text-[#b78296]"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm font-semibold text-[#655865] transition hover:text-[#b78296]"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -45,6 +57,21 @@ export function SiteFooter() {
           >
             <WhatsAppIcon className="h-5 w-5" />
             WhatsApp&apos;tan Yaz
+          </a>
+          <a
+            href={mailtoHref}
+            className="mt-3 block text-sm font-semibold text-[#70528f] transition hover:text-[#b78296]"
+          >
+            {contactEmail}
+          </a>
+          <a
+            href={instagramHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#70528f] transition hover:text-[#b78296]"
+          >
+            <InstagramIcon className="h-5 w-5" />
+            @{instagramUsername}
           </a>
         </div>
       </div>

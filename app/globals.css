@@ -104,26 +104,6 @@ a:focus-visible {
   object-fit: contain;
 }
 
-.instagram-mark {
-  position: relative;
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  border-radius: 7px;
-  background:
-    radial-gradient(circle at 72% 28%, #fff 0 8%, transparent 9%),
-    conic-gradient(from 220deg, #f8d7e6, #c8b6ff, #bee8ff, #e7cda6, #f8d7e6);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.9);
-}
-
-.instagram-mark::after {
-  content: "";
-  position: absolute;
-  inset: 6px;
-  border: 2px solid #ffffff;
-  border-radius: 999px;
-}
-
 .floating-whatsapp {
   position: fixed;
   right: 18px;
@@ -186,6 +166,18 @@ a svg {
 
 .home-hero h1 { letter-spacing: -0.035em; }
 .home-hero img { box-shadow: 0 18px 45px rgba(83, 58, 91, .10); }
+.home-hero-stat {
+  border: 1px solid rgba(200, 182, 255, .46);
+  background: rgba(255, 255, 255, .88);
+  color: #5f5063;
+  box-shadow: 0 8px 20px rgba(112, 82, 143, .08);
+}
+.home-hero-stat-accent {
+  border-color: rgba(231, 205, 166, .78);
+  background: linear-gradient(135deg, #fff6ee, #fffaf8);
+  color: #8f7044;
+  box-shadow: 0 8px 20px rgba(231, 205, 166, .18);
+}
 .home-trust, .home-featured, .home-order { background: transparent; }
 .home-featured { position: relative; }
 .home-order-card {
@@ -193,6 +185,30 @@ a svg {
   border: 1px solid rgba(231, 205, 166, .46);
   box-shadow: 0 18px 44px rgba(112, 82, 143, .11);
   backdrop-filter: blur(10px);
+}
+.home-order-step {
+  border: 1px solid rgba(255, 255, 255, .92);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(255, 250, 248, .88)),
+    radial-gradient(circle at 86% 12%, rgba(248, 215, 230, .38), transparent 30%);
+  box-shadow: 0 12px 28px rgba(112, 82, 143, .10);
+}
+.home-order-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  border: 1px solid rgba(231, 205, 166, .72);
+  border-radius: 999px;
+  background: #fff6ee;
+  color: #8f7044;
+}
+.home-order-step-title {
+  color: #514153;
+}
+.home-order-step-text {
+  color: #625361;
 }
 .home-cta-section > div {
   background:
@@ -433,8 +449,37 @@ html[data-theme="dark"] .site-footer .text-\[\#8b7180\] { color: #d9cadd !import
 html[data-theme="dark"] .home-hero > div:first-child { background: linear-gradient(180deg, rgba(200,182,255,.16), #1c1721 68%, #1c1721) !important; }
 html[data-theme="dark"] .home-page { background: linear-gradient(180deg, #1c1721 0%, #302540 38%, #263044 70%, #1c1721 100%) !important; }
 html[data-theme="dark"] .home-hero { background: transparent; }
+html[data-theme="dark"] .home-hero-stat {
+  border-color: rgba(200, 182, 255, .28);
+  background: rgba(48, 39, 64, .88);
+  color: #eaddea !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+}
+html[data-theme="dark"] .home-hero-stat-accent {
+  border-color: rgba(231, 205, 166, .44);
+  background: rgba(231, 205, 166, .14);
+  color: #e7cda6 !important;
+}
 html[data-theme="dark"] .home-trust, html[data-theme="dark"] .home-featured, html[data-theme="dark"] .home-order { background: transparent; }
 html[data-theme="dark"] .home-order-card { background: rgba(41, 34, 48, .72); border-color: rgba(200, 182, 255, .24); }
+html[data-theme="dark"] .home-order-step {
+  border-color: rgba(200, 182, 255, .22);
+  background:
+    linear-gradient(180deg, rgba(48, 39, 64, .96), rgba(42, 35, 48, .92)),
+    radial-gradient(circle at 86% 12%, rgba(248, 215, 230, .14), transparent 32%);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, .22);
+}
+html[data-theme="dark"] .home-order-step-number {
+  border-color: rgba(231, 205, 166, .44);
+  background: rgba(231, 205, 166, .14);
+  color: #e7cda6 !important;
+}
+html[data-theme="dark"] .home-order-step-title {
+  color: #f4e8ff !important;
+}
+html[data-theme="dark"] .home-order-step-text {
+  color: #eaddea !important;
+}
 html[data-theme="dark"] .home-page .site-footer > div:first-child { background: rgba(28, 23, 33, .28); }
 html[data-theme="dark"] .home-page .site-footer > .footer-bottom { background: rgba(28, 23, 33, .5) !important; }
 html[data-theme="dark"] header .group > div { border-color: rgba(200,182,255,.32) !important; background: #302740 !important; }

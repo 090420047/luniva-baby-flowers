@@ -1,11 +1,15 @@
 export const siteName = "Luniva Baby & Flowers";
+export const contactEmail = "lunivababyflowers@gmail.com";
+export const mailtoHref = `mailto:${contactEmail}`;
+export const instagramUsername = "lunivababyflowers";
+export const instagramHref = `https://www.instagram.com/${instagramUsername}/`;
 export const whatsappNumber = "905555555555";
 export const whatsappMessage = encodeURIComponent(
   "Merhaba Luniva Baby & Flowers, sipariş vermek istiyorum."
 );
 export const whatsappHref = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 export const instagramNotice =
-  "Instagram hesabı açıldığında kullanıcı adı buraya eklenecek.";
+  `Instagram hesabımız: @${instagramUsername}`;
 
 export const productCategories = [
   {
@@ -328,7 +332,7 @@ export const footerColumns = [
     links: [
       { label: "Hakkımızda", href: "/hakkimizda" },
       { label: "Sık Sorulan Sorular", href: "/sik-sorulan-sorular" },
-      { label: "Instagram", href: "/instagram" },
+      { label: "Instagram", href: instagramHref },
       { label: "İletişim", href: "/iletisim" },
     ],
   },
@@ -404,8 +408,9 @@ export const infoPages = {
   ),
   instagram: page(
     "instagram", "Sosyal medya", "Instagram",
-    "Yeni modeller, at\u00f6lye detaylar\u0131 ve teslimata haz\u0131r tasar\u0131mlar\u0131 Instagram hesab\u0131m\u0131zdan payla\u015faca\u011f\u0131z.",
+    "Yeni modeller, at\u00f6lye detaylar\u0131 ve teslimata haz\u0131r tasar\u0131mlar\u0131 @lunivababyflowers hesab\u0131m\u0131zdan payla\u015faca\u011f\u0131z.",
     [
+      { title: "Instagram hesab\u0131m\u0131z", body: ["@lunivababyflowers"] },
       { title: "Yeni modeller", body: ["Yeni do\u011fan hediyeleri, mevsime uygun renk paletleri ve isme \u00f6zel tasar\u0131mlar\u0131 takip edebilirsiniz."] },
       { title: "At\u00f6lyeden kareler", body: ["\u00c7i\u00e7ek se\u00e7imi, kurdele detaylar\u0131 ve haz\u0131rl\u0131k s\u00fcrecinden k\u0131sa payla\u015f\u0131mlar yer alacakt\u0131r."] },
       { title: "G\u00fcncel duyurular", body: ["Yo\u011funluk d\u00f6nemleri, teslimat plan\u0131 ve \u00f6zel g\u00fcn koleksiyonlar\u0131 bu kanaldan duyurulacakt\u0131r."] },
@@ -418,7 +423,8 @@ export const infoPages = {
     "Sipari\u015f ve bilgi almak i\u00e7in en h\u0131zl\u0131 ileti\u015fim kanal\u0131m\u0131z WhatsApp't\u0131r.",
     [
       { title: "Telefon", body: ["0534 958 11 66"] },
-      { title: "E-posta", body: ["E-posta bilgisi yak\u0131nda eklenecektir."] },
+      { title: "E-posta", body: ["lunivababyflowers@gmail.com"] },
+      { title: "Instagram", body: ["@lunivababyflowers"] },
       { title: "Adres", body: ["Melik\u015fah Mahallesi H\u00fcy\u00fckl\u00fc Sokak No: 19/B, Meram / Konya"] },
       { title: "WhatsApp sipari\u015f", body: ["Be\u011fendi\u011finiz modeli bize g\u00f6ndererek sipari\u015f konu\u015fmas\u0131n\u0131 ba\u015flatabilirsiniz."] },
     ]
@@ -449,7 +455,7 @@ export const infoPages = {
     [
       { title: "Hangi bilgiler kullan\u0131l\u0131r?", body: ["Ad, ileti\u015fim bilgisi, teslimat adresi ve tasar\u0131m tercihleri; sipari\u015fin haz\u0131rlanmas\u0131 ve teslimat\u0131 i\u00e7in gerekli oldu\u011fu \u00f6l\u00e7\u00fcde kullan\u0131l\u0131r."] },
       { title: "Bilgilerinizin korunmas\u0131", body: ["Sipari\u015f detaylar\u0131n\u0131z gizli tutulur ve hizmetin gerektirdi\u011fi durumlar d\u0131\u015f\u0131nda \u00fc\u00e7\u00fcnc\u00fc ki\u015filerle payla\u015f\u0131lmaz."] },
-      { title: "\u0130leti\u015fim ve talepler", body: ["Bilgilerinizle ilgili soru, d\u00fczeltme veya silme talebiniz i\u00e7in WhatsApp \u00fczerinden bizimle ileti\u015fime ge\u00e7ebilirsiniz."] },
+      { title: "\u0130leti\u015fim ve talepler", body: ["Bilgilerinizle ilgili soru, d\u00fczeltme veya silme talebiniz i\u00e7in WhatsApp ya da e-posta \u00fczerinden bizimle ileti\u015fime ge\u00e7ebilirsiniz."] },
     ]
   ),
   "mesafeli-satis-bilgilendirmesi": page(
