@@ -81,6 +81,7 @@ export type ProductItem = {
   tags: string[];
   dimensions?: string;
   thickness?: string;
+  featuredLabel?: string;
 };
 
 export const productItems: ProductItem[] = [
@@ -96,6 +97,7 @@ export const productItems: ProductItem[] = [
     tags: ["Biberon", "Pembe", "İnci detay"],
     dimensions: "16,5 × 33 cm",
     thickness: "9 cm",
+    featuredLabel: "En Çok Beğenilen",
   },
   {
     title: "Ay yıldızlı mavi bebek modeli",
@@ -183,6 +185,7 @@ export const productItems: ProductItem[] = [
     tags: ["Biberon fener", "Mavi", "Ayıcıklı"],
     dimensions: "16,5 × 33 cm",
     thickness: "9 cm",
+    featuredLabel: "En Çok Beğenilen",
   },
   {
     title: "Krem beşik sepet tasarımı",
@@ -231,6 +234,9 @@ export const productItems: ProductItem[] = [
       "isme-ozel-tasarimlar",
     ],
     tags: ["Kuğu", "Mavi", "Strafor model"],
+    dimensions: "45 × 35 cm",
+    thickness: "9 cm",
+    featuredLabel: "En Çok Satılan",
   },
   {
     title: "Lila kuğu oda sunumu",
@@ -243,6 +249,9 @@ export const productItems: ProductItem[] = [
       "isme-ozel-tasarimlar",
     ],
     tags: ["Lila", "Hastane odası", "Kuğu"],
+    dimensions: "45 × 35 cm",
+    thickness: "9 cm",
+    featuredLabel: "En Çok Satılan",
   },
   {
     title: "Sarı çiçekli mavi kuğu",
@@ -255,6 +264,9 @@ export const productItems: ProductItem[] = [
       "isme-ozel-tasarimlar",
     ],
     tags: ["Mavi", "Sarı çiçek", "Strafor model"],
+    dimensions: "45 × 35 cm",
+    thickness: "9 cm",
+    featuredLabel: "En Çok Satılan",
   },
   {
     title: "Aileye hediye sunumu",

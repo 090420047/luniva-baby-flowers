@@ -40,6 +40,7 @@ export function ProductDetailView({ product }: { product: ProductItem }) {
           </div>
 
           <div className="lg:pt-5">
+            {product.featuredLabel ? <span className="inline-flex rounded-full bg-[#e7cda6] px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.12em] text-[#5c4425] shadow-sm">★ {product.featuredLabel}</span> : null}
             <p className="section-kicker text-xs font-bold uppercase text-[#b78296]">
               {"Luniva tasar\u0131m\u0131"}
             </p>
@@ -86,7 +87,7 @@ export function ProductDetailView({ product }: { product: ProductItem }) {
               </div>
             </div>
 
-            <ProductWhatsAppButton productName={product.title} productImage={product.image} productIndex={productItems.indexOf(product)} />
+            <ProductWhatsAppButton productName={product.title} />
           </div>
         </div>
 

@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import type { ProductCategorySlug } from "../site-content";
 import {
   getProductsByCategory,
   productItems,
   productCategories,
   productCategoryMap,
+  whatsappHref,
 } from "../site-content";
 import { FloatingWhatsApp } from "./FloatingWhatsApp";
 import { SiteFooter } from "./SiteFooter";
@@ -14,6 +18,7 @@ import { ScrollReveal } from "./ScrollReveal";
 import { ProductWhatsAppButton } from "./ProductWhatsAppButton";
 
 export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
+  const [mobileGrid, setMobileGrid] = useState<"single" | "double">("single");
   const category = productCategoryMap[slug];
   const products = getProductsByCategory(slug);
   const otherCategories = productCategories.filter((item) => item.slug !== slug);
@@ -53,18 +58,27 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
         </div>
 
         {products.length > 0 ? (
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <>
+            <div className="mobile-product-layout-switch" aria-label="Ürün görünümü">
+              <span>{"Görünüm"}</span>
+              <div>
+                <button type="button" onClick={() => setMobileGrid("single")} className={mobileGrid === "single" ? "is-active" : ""} aria-pressed={mobileGrid === "single"}>Tekli</button>
+                <button type="button" onClick={() => setMobileGrid("double")} className={mobileGrid === "double" ? "is-active" : ""} aria-pressed={mobileGrid === "double"}>İkili</button>
+              </div>
+            </div>
+            <div className={`product-grid mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3 ${mobileGrid === "double" ? "product-grid-double" : "product-grid-single"}`}>
             {products.map((item) => (
               <article
                 key={item.title}
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#eadfea] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#c8b6ff]/15"
               >
-                <Link href={`/urun/${productItems.indexOf(item)}`} className="block aspect-[4/4.35] overflow-hidden bg-[#f7eef5]">
+                <Link href={`/urun/${productItems.indexOf(item)}`} className="relative block aspect-[4/4.35] overflow-hidden bg-[#f7eef5]">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
+                  {item.featuredLabel ? <span className="absolute left-4 top-4 rounded-full bg-[#e7cda6] px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.1em] text-[#5c4425] shadow-lg shadow-[#8f7044]/20">★ {item.featuredLabel}</span> : null}
                 </Link>
                 <div className="flex flex-1 flex-col p-5">
                   <div className="mb-4 flex flex-wrap gap-2">
@@ -86,12 +100,13 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
                       <span>{"\u00dcr\u00fcn detaylar\u0131"}</span>
                       <span aria-hidden="true" className="grid h-7 w-7 place-items-center rounded-full bg-white/20 text-base transition duration-300 group-hover/detail:translate-x-1 group-hover/detail:bg-white group-hover/detail:text-[#70528f]">→</span>
                     </Link>
-                    <ProductWhatsAppButton productName={item.title} productImage={item.image} productIndex={productItems.indexOf(item)} compact />
+                    <ProductWhatsAppButton productName={item.title} compact />
                   </div>
                 </div>
               </article>
             ))}
-          </div>
+            </div>
+          </>
         ) : (
           <div className="mt-12 rounded-[28px] border border-[#eadfea] bg-white p-8 text-center shadow-sm">
             <p className="section-kicker text-xs font-bold uppercase text-[#b78296]">

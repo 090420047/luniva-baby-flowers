@@ -315,6 +315,7 @@ a svg {
 .search-trigger { display: inline-flex; min-width: 116px; min-height: 48px; align-items: center; justify-content: center; gap: 8px; border: 1px solid #eadfea; border-radius: 999px; background: #fff; color: #70528f; padding: 12px 20px; font-size: 13px; font-weight: 700; transition: background 180ms ease, transform 180ms ease; }
 .search-trigger:hover { background: #f7eef5; transform: translateY(-1px); }
 .search-trigger svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.mobile-product-layout-switch { display: none; }
 .mobile-menu-toggle { display: inline-flex; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid #eadfea; border-radius: 50%; background: #fff; }
 .mobile-menu-toggle span { width: 17px; height: 1.5px; border-radius: 999px; background: #70528f; }
 .mobile-menu { max-height: calc(100vh - 90px); overflow-y: auto; border-top: 1px solid #eadfea; background: rgba(255,250,248,.98); padding: 12px 20px 22px; box-shadow: 0 16px 28px rgba(74,54,79,.10); }
@@ -323,6 +324,28 @@ a svg {
 .mobile-menu-categories p { margin-bottom: 8px; color: #9d6780; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .mobile-menu-categories a { display: inline-block; margin: 5px 7px 0 0; border-radius: 999px; background: rgba(248,215,230,.40); padding: 8px 11px; color: #70528f; font-size: .85rem; font-weight: 700; }
 @media (max-width: 639px) { .brand-lockup { gap: .55rem; } .brand-lockup .brand-mark { width: 45px; height: 45px; } .brand-lockup > span:last-child > span:first-child { font-size: 23px; } .brand-lockup > span:last-child > span:last-child { font-size: 8px; letter-spacing: .19em; } .search-trigger { min-width: 44px; width: 44px; min-height: 44px; padding: 0; } .floating-whatsapp { right: 14px; bottom: 16px; width: 50px; height: 50px; } .floating-theme-control { left: 14px; bottom: 16px; } .theme-toggle { width: 44px; height: 44px; } .product-detail-notes + button, .product-detail-notes + a { width: 100%; justify-content: center; } }
+@media (max-width: 639px) {
+  .mobile-product-layout-switch { display: flex; align-items: center; justify-content: space-between; margin-top: 2.5rem; }
+  .mobile-product-layout-switch > span { color: #8f7044; font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .mobile-product-layout-switch > div { display: inline-flex; padding: 3px; border: 1px solid rgba(200,182,255,.48); border-radius: 999px; background: rgba(255,250,248,.68); }
+  .mobile-product-layout-switch button { border: 0; border-radius: 999px; background: transparent; padding: 7px 11px; color: #70528f; font-size: .75rem; font-weight: 800; }
+  .mobile-product-layout-switch button.is-active { background: #70528f; color: #fff; box-shadow: 0 3px 8px rgba(112,82,143,.2); }
+  .product-grid-single { grid-template-columns: 1fr; }
+  .product-grid-double { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .product-grid-double article { border-radius: 15px; }
+  .product-grid-double article > a:first-child { aspect-ratio: 1 / 1.12; }
+  .product-grid-double article > div { padding: 12px; }
+  .product-grid-double article > div > div:first-child { margin-bottom: 10px; gap: 4px; }
+  .product-grid-double article > div > div:first-child span { padding: 5px 7px; font-size: 8px; letter-spacing: .06em; }
+  .product-grid-double article > div > a { font-size: 1.08rem; line-height: 1.18; }
+  .product-grid-double article > div > p { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; font-size: .78rem; line-height: 1.45; }
+  .product-grid-double article > div > div:last-child { gap: 8px; padding-top: 14px; }
+  .product-grid-double article > div > div:last-child > a { padding: 10px; border-radius: 12px; font-size: 0; }
+  .product-grid-double article > div > div:last-child > a span:first-child { display: none; }
+  .product-grid-double article > div > div:last-child > button { padding: 10px 4px; font-size: 0; }
+  .product-grid-double article > div > div:last-child > button svg { width: 17px; height: 17px; }
+  .product-grid-double article > a:first-child > span { left: 8px; top: 8px; padding: 5px 7px; font-size: 7px; letter-spacing: .05em; }
+}
 .search-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: start center; padding: 96px 20px 20px; }
 .search-backdrop { position: absolute; inset: 0; border: 0; background: rgba(45, 36, 48, .32); backdrop-filter: blur(4px); }
 .search-panel { position: relative; width: min(590px, 100%); border: 1px solid rgba(255,255,255,.8); border-radius: 24px; background: #fff; padding: 24px; box-shadow: 0 22px 64px rgba(45,36,48,.22); }

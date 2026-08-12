@@ -5,17 +5,12 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 
 type ProductWhatsAppButtonProps = {
   productName: string;
-  productImage: string;
-  productIndex: number;
   compact?: boolean;
 };
 
-export function ProductWhatsAppButton({ productName, productImage, productIndex, compact = false }: ProductWhatsAppButtonProps) {
+export function ProductWhatsAppButton({ productName, compact = false }: ProductWhatsAppButtonProps) {
   const handleClick = () => {
-    const siteUrl = window.location.origin;
-    const productUrl = `${siteUrl}/urun/${productIndex}`;
-    const imageUrl = `${siteUrl}${productImage}`;
-    const message = `Merhaba Luniva Baby & Flowers, ${productName} hakkında bilgi almak istiyorum.\n\nÜrün bağlantısı: ${productUrl}\nÜrün görseli: ${imageUrl}`;
+    const message = `Merhaba Luniva Baby & Flowers, ${productName} hakkında bilgi almak istiyorum.`;
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
