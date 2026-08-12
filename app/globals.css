@@ -262,6 +262,17 @@ a svg {
 @media (max-width: 720px) {
   .home-hero h1 { letter-spacing: -0.025em; }
   .back-to-top { right: 16px; bottom: 78px; }
+  .home-hero { padding-top: 2rem; }
+  .home-hero h1 { font-size: clamp(2.35rem, 11vw, 3.2rem); }
+  .home-hero > div:last-child { gap: 2rem; padding-bottom: 3.5rem; }
+  .home-hero > div:last-child > div:last-child { grid-template-columns: 1fr .82fr; }
+  .home-hero > div:last-child > div:last-child img { height: 320px !important; }
+  .home-hero > div:last-child > div:last-child > div:last-child > div:first-child img { height: 150px !important; }
+  .home-featured, .home-order { padding-top: 3.8rem !important; padding-bottom: 3.8rem !important; }
+  .home-order-card { border-radius: 24px; padding: 1.5rem !important; }
+  .home-cta-section { padding-top: 3.8rem !important; padding-bottom: 3.8rem !important; }
+  .home-cta-section > div { border-radius: 24px; padding: 1.5rem !important; }
+  .product-detail-notes > div { padding: .85rem 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -289,7 +300,7 @@ a svg {
 .hero-video-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(45, 36, 48, .42), rgba(45, 36, 48, .06) 60%, rgba(45, 36, 48, .18)); }
 .hero-video-frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(255,250,248,.5) 0%, rgba(255,250,248,0) 7%, rgba(255,250,248,0) 93%, rgba(255,250,248,.5) 100%); }
 .home-hero { padding-top: 42px; }
-@media (max-width: 720px) { .hero-video-section { padding: 104px 0 6px; } .hero-video-frame { height: 360px; } .home-hero { padding-top: 30px; } }
+@media (max-width: 720px) { .hero-video-section { padding: 90px 0 6px; } .hero-video-frame { height: 280px; } .home-hero { padding-top: 30px; } }
 
 
 .brand-mark {
@@ -304,6 +315,14 @@ a svg {
 .search-trigger { display: inline-flex; min-width: 116px; min-height: 48px; align-items: center; justify-content: center; gap: 8px; border: 1px solid #eadfea; border-radius: 999px; background: #fff; color: #70528f; padding: 12px 20px; font-size: 13px; font-weight: 700; transition: background 180ms ease, transform 180ms ease; }
 .search-trigger:hover { background: #f7eef5; transform: translateY(-1px); }
 .search-trigger svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.mobile-menu-toggle { display: inline-flex; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid #eadfea; border-radius: 50%; background: #fff; }
+.mobile-menu-toggle span { width: 17px; height: 1.5px; border-radius: 999px; background: #70528f; }
+.mobile-menu { max-height: calc(100vh - 90px); overflow-y: auto; border-top: 1px solid #eadfea; background: rgba(255,250,248,.98); padding: 12px 20px 22px; box-shadow: 0 16px 28px rgba(74,54,79,.10); }
+.mobile-menu > a { display: block; border-bottom: 1px solid rgba(231,205,166,.4); padding: 13px 4px; color: #655865; font-family: var(--font-small-copy); font-size: 1rem; font-weight: 700; }
+.mobile-menu-categories { padding: 16px 4px 0; }
+.mobile-menu-categories p { margin-bottom: 8px; color: #9d6780; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.mobile-menu-categories a { display: inline-block; margin: 5px 7px 0 0; border-radius: 999px; background: rgba(248,215,230,.40); padding: 8px 11px; color: #70528f; font-size: .85rem; font-weight: 700; }
+@media (max-width: 639px) { .brand-lockup { gap: .55rem; } .brand-lockup .brand-mark { width: 45px; height: 45px; } .brand-lockup > span:last-child > span:first-child { font-size: 23px; } .brand-lockup > span:last-child > span:last-child { font-size: 8px; letter-spacing: .19em; } .search-trigger { min-width: 44px; width: 44px; min-height: 44px; padding: 0; } .floating-whatsapp { right: 14px; bottom: 16px; width: 50px; height: 50px; } .floating-theme-control { left: 14px; bottom: 16px; } .theme-toggle { width: 44px; height: 44px; } .product-detail-notes + button, .product-detail-notes + a { width: 100%; justify-content: center; } }
 .search-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: start center; padding: 96px 20px 20px; }
 .search-backdrop { position: absolute; inset: 0; border: 0; background: rgba(45, 36, 48, .32); backdrop-filter: blur(4px); }
 .search-panel { position: relative; width: min(590px, 100%); border: 1px solid rgba(255,255,255,.8); border-radius: 24px; background: #fff; padding: 24px; box-shadow: 0 22px 64px rgba(45,36,48,.22); }

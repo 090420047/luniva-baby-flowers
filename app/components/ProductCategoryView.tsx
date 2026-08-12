@@ -5,13 +5,13 @@ import {
   productItems,
   productCategories,
   productCategoryMap,
-  whatsappHref,
 } from "../site-content";
 import { FloatingWhatsApp } from "./FloatingWhatsApp";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { ScrollReveal } from "./ScrollReveal";
+import { ProductWhatsAppButton } from "./ProductWhatsAppButton";
 
 export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
   const category = productCategoryMap[slug];
@@ -86,14 +86,7 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
                       <span>{"\u00dcr\u00fcn detaylar\u0131"}</span>
                       <span aria-hidden="true" className="grid h-7 w-7 place-items-center rounded-full bg-white/20 text-base transition duration-300 group-hover/detail:translate-x-1 group-hover/detail:bg-white group-hover/detail:text-[#70528f]">→</span>
                     </Link>
-                    <a
-                      href={whatsappHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/whatsapp inline-flex items-center justify-center gap-2 border-b-2 border-[#25d366] px-2 py-3 text-xs font-bold uppercase tracking-[0.1em] text-[#168f45] transition duration-300 hover:border-[#168f45] hover:text-[#0f7235]"
-                    >
-                      <WhatsAppIcon className="h-4 w-4 transition duration-300 group-hover/whatsapp:scale-110" />{"Sor"}
-                    </a>
+                    <ProductWhatsAppButton productName={item.title} productImage={item.image} productIndex={productItems.indexOf(item)} compact />
                   </div>
                 </div>
               </article>

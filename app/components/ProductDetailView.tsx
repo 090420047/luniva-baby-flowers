@@ -1,11 +1,11 @@
 import Link from "next/link";
 import type { ProductItem } from "../site-content";
-import { productCategoryMap, productItems, whatsappHref } from "../site-content";
+import { productCategoryMap, productItems } from "../site-content";
 import { FloatingWhatsApp } from "./FloatingWhatsApp";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
-import { WhatsAppIcon } from "./WhatsAppIcon";
 import { ScrollReveal } from "./ScrollReveal";
+import { ProductWhatsAppButton } from "./ProductWhatsAppButton";
 
 export function ProductDetailView({ product }: { product: ProductItem }) {
   const primaryCategory = product.categories[0];
@@ -86,15 +86,7 @@ export function ProductDetailView({ product }: { product: ProductItem }) {
               </div>
             </div>
 
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-9 inline-flex items-center gap-3 rounded-full bg-[#25d366] px-6 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-xl shadow-[#25d366]/25 transition duration-300 hover:-translate-y-1 hover:bg-[#1fbd5b] hover:shadow-2xl hover:shadow-[#25d366]/30"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              {"Bu model hakk\u0131nda bilgi al"}
-            </a>
+            <ProductWhatsAppButton productName={product.title} productImage={product.image} productIndex={productItems.indexOf(product)} />
           </div>
         </div>
 
