@@ -62,8 +62,8 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
             <div className="mobile-product-layout-switch" aria-label="Ürün görünümü">
               <span>{"Görünüm"}</span>
               <div>
-                <button type="button" onClick={() => setMobileGrid("single")} className={mobileGrid === "single" ? "is-active" : ""} aria-pressed={mobileGrid === "single"}>Tekli</button>
-                <button type="button" onClick={() => setMobileGrid("double")} className={mobileGrid === "double" ? "is-active" : ""} aria-pressed={mobileGrid === "double"}>İkili</button>
+                <button type="button" onClick={() => setMobileGrid("single")} className={mobileGrid === "single" ? "is-active" : ""} aria-label="Tek sütun görünümü" title="Tek sütun görünümü" aria-pressed={mobileGrid === "single"}><span className="layout-icon layout-icon-single" aria-hidden="true"><i /><i /><i /></span></button>
+                <button type="button" onClick={() => setMobileGrid("double")} className={mobileGrid === "double" ? "is-active" : ""} aria-label="İki sütun görünümü" title="İki sütun görünümü" aria-pressed={mobileGrid === "double"}><span className="layout-icon layout-icon-double" aria-hidden="true"><i /><i /><i /><i /></span></button>
               </div>
             </div>
             <div className={`product-grid mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3 ${mobileGrid === "double" ? "product-grid-double" : "product-grid-single"}`}>

@@ -266,6 +266,7 @@ a svg {
   .home-hero h1 { font-size: clamp(2.35rem, 11vw, 3.2rem); }
   .home-hero > div:last-child { gap: 2rem; padding-bottom: 3.5rem; }
   .home-hero > div:last-child > div:last-child { grid-template-columns: 1fr .82fr; }
+  .home-hero > div:last-child > div:last-child > div:first-child { align-self: start; }
   .home-hero > div:last-child > div:last-child img { height: 320px !important; }
   .home-hero > div:last-child > div:last-child > div:last-child > div:first-child img { height: 150px !important; }
   .home-featured, .home-order { padding-top: 3.8rem !important; padding-bottom: 3.8rem !important; }
@@ -328,8 +329,12 @@ a svg {
   .mobile-product-layout-switch { display: flex; align-items: center; justify-content: space-between; margin-top: 2.5rem; }
   .mobile-product-layout-switch > span { color: #8f7044; font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
   .mobile-product-layout-switch > div { display: inline-flex; padding: 3px; border: 1px solid rgba(200,182,255,.48); border-radius: 999px; background: rgba(255,250,248,.68); }
-  .mobile-product-layout-switch button { border: 0; border-radius: 999px; background: transparent; padding: 7px 11px; color: #70528f; font-size: .75rem; font-weight: 800; }
+  .mobile-product-layout-switch button { display: grid; width: 36px; height: 32px; place-items: center; border: 0; border-radius: 999px; background: transparent; color: #70528f; }
   .mobile-product-layout-switch button.is-active { background: #70528f; color: #fff; box-shadow: 0 3px 8px rgba(112,82,143,.2); }
+  .layout-icon { display: grid; width: 17px; height: 16px; gap: 2px; }
+  .layout-icon i { display: block; border: 1.5px solid currentColor; border-radius: 2px; }
+  .layout-icon-single { grid-template-rows: repeat(3, 1fr); }
+  .layout-icon-double { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
   .product-grid-single { grid-template-columns: 1fr; }
   .product-grid-double { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .product-grid-double article { border-radius: 15px; }
