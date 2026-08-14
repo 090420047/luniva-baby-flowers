@@ -17,22 +17,22 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(origin),
-    title: "Luniva Baby & Flowers | WhatsApp Sipariş",
+    title: "Luniva Baby & Flowers | Bebek Hediyelikleri ve Hoş Geldin Bebek Modelleri",
     description:
-      "Luniva Baby & Flowers için bebek hediyelikleri, strafor modeller, çiçekli aranjmanlar ve WhatsApp sipariş vitrini.",
+      "Luniva Baby & Flowers için hoş geldin bebek hediyelikleri, isme özel strafor modeller, bebek buketleri, çiçekli aranjmanlar ve WhatsApp sipariş vitrini.",
     icons: {
       icon: [
-        { url: "/favicon.ico?v=6", sizes: "any" },
-        { url: "/favicon.png?v=6", sizes: "512x512", type: "image/png" },
-        { url: "/icon-192.png?v=6", sizes: "192x192", type: "image/png" },
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon.png", sizes: "512x512", type: "image/png" },
+        { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
       ],
-      shortcut: "/favicon.ico?v=6",
-      apple: "/apple-touch-icon.png?v=6",
+      shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
     },
     openGraph: {
-      title: "Luniva Baby & Flowers",
+      title: "Luniva Baby & Flowers | Bebek Hediyelikleri",
       description:
-        "Hoş geldin bebek hediyeleri, hastane odası süsleri ve özel gün tasarımları WhatsApp üzerinden sipariş edilir.",
+        "Hoş geldin bebek hediyeleri, isme özel strafor modeller, bebek buketleri ve özel gün tasarımları WhatsApp üzerinden sipariş edilir.",
       url: origin,
       siteName: "Luniva Baby & Flowers",
       locale: "tr_TR",
@@ -48,9 +48,9 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Luniva Baby & Flowers",
+      title: "Luniva Baby & Flowers | Bebek Hediyelikleri",
       description:
-        "Bebek hediyelikleri ve çiçekli aranjmanlar için WhatsApp sipariş vitrini.",
+        "Hoş geldin bebek hediyelikleri, bebek buketleri ve çiçekli aranjmanlar için WhatsApp sipariş vitrini.",
       images: ["/og.png"],
     },
   };
