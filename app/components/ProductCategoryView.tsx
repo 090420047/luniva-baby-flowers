@@ -30,16 +30,16 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
 
       <section data-reveal className="mx-auto max-w-7xl px-5 pb-16 pt-32 lg:px-8">
         <Link
-          href="/kategoriler"
+          href="/modeller"
           className="text-xs font-bold uppercase tracking-[0.14em] text-[#b78296] transition hover:text-[#7e62a6]"
         >
-          Kategorilere dön
+          Modellere dön
         </Link>
 
         <div className="mt-7 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <p className="section-kicker text-xs font-bold uppercase text-[#b78296]">
-              Kategori
+              Model grubu
             </p>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-[#7e62a6] lg:text-5xl">
               {category.title}
@@ -113,10 +113,10 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
               Yakında
             </p>
             <h2 className="mt-3 font-serif text-3xl font-semibold text-[#70528f]">
-              {category.emptyLabel ?? "Bu kategoriye modeller yakında eklenecek."}
+              {category.emptyLabel ?? "Bu model grubuna yeni modeller yakında eklenecek."}
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#655865]">
-              Elinizde bu kategoriye ait ürün görselleri olduğunda aynı düzende
+              Elinizde bu model grubuna ait ürün görselleri olduğunda aynı düzende
               buraya ekleyebiliriz. Şimdilik ziyaretçi WhatsApp üzerinden özel
               tasarım talebini iletebilir.
             </p>
@@ -135,7 +135,7 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
       <section data-reveal className="border-t border-[#eadfea] bg-white py-12">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <h2 className="font-serif text-2xl font-semibold text-[#70528f]">
-            Diğer kategoriler
+            Diğer modeller
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {otherCategories.slice(0, 4).map((item) => (

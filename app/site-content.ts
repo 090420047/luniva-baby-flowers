@@ -25,9 +25,9 @@ export const productCategories = [
     title: "Buketler",
     shortTitle: "Buketler",
     description:
-      "Çiçek buketi formunda hazırlanacak bebek hediyeleri için ayrılan yeni kategori.",
+      "Çiçek buketi formunda hazırlanacak bebek hediyeleri için ayrılan yeni model grubu.",
     image: "/luniva/family-gift.png",
-    emptyLabel: "Bu kategoriye buket modelleri yakında eklenecek.",
+    emptyLabel: "Bu model grubuna buket modelleri yakında eklenecek.",
   },
   {
     slug: "isme-ozel-tasarimlar",
@@ -333,7 +333,7 @@ export function getProductsByCategory(slug: ProductCategorySlug) {
 
 export const footerColumns = [
   {
-    title: "Kategoriler",
+    title: "Modeller",
     links: productCategories.map((category) => ({
       label: category.shortTitle,
       href: `/${category.slug}`,
@@ -487,9 +487,9 @@ export const infoPages = {
     "Bebek doğumu ve en özel ilk günler için hazırlanan kişiye özel hediye alternatifleri.",
     [
       {
-        title: "Kategori seçerek ilerleyin",
+        title: "Model seçerek ilerleyin",
         body: [
-          "Ana sayfadaki kategori kutularından seçim yaparak yalnızca ilgili modelleri görebilirsiniz.",
+          "Ana sayfadaki model kutularından seçim yaparak yalnızca ilgili tasarımları görebilirsiniz.",
         ],
       },
     ]

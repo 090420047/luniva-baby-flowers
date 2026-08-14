@@ -8,7 +8,7 @@ import { SearchButton } from "./SearchButton";
 
 const links = [
   { href: "/", label: "Ana Sayfa" },
-  { href: "/kategoriler", label: "Kategoriler" },
+  { href: "/modeller", label: "Modeller" },
   { href: "/siparis", label: "Sipariş" },
   { href: "/hakkimizda", label: "Hakkımızda" },
   { href: "/iletisim", label: "İletişim" },
@@ -28,14 +28,14 @@ export function SiteHeader() {
 
         <nav aria-label="Ana menü" className="site-navigation hidden items-center gap-7 text-[15px] font-semibold text-[#665766] xl:flex">
           <Link href="/" className="transition hover:text-[#8f6bb8]">Ana Sayfa</Link>
-          <div className="group relative"><Link href="/kategoriler" className="inline-flex py-7 transition hover:text-[#8f6bb8]">Kategoriler</Link><div className="invisible absolute left-1/2 top-[66px] w-64 -translate-x-1/2 rounded-2xl border border-[#eadfea] bg-white p-2 opacity-0 shadow-xl shadow-[#7e62a6]/10 transition duration-200 group-hover:visible group-hover:opacity-100">{productCategories.map((category) => <Link key={category.slug} href={`/${category.slug}`} className="block rounded-xl px-4 py-2.5 text-sm text-[#5f535f] transition hover:bg-[#f7eef5] hover:text-[#70528f]">{category.shortTitle}</Link>)}</div></div>
+          <div className="group relative"><Link href="/modeller" className="inline-flex py-7 transition hover:text-[#8f6bb8]">Modeller</Link><div className="invisible absolute left-1/2 top-[66px] w-64 -translate-x-1/2 rounded-2xl border border-[#eadfea] bg-white p-2 opacity-0 shadow-xl shadow-[#7e62a6]/10 transition duration-200 group-hover:visible group-hover:opacity-100">{productCategories.map((category) => <Link key={category.slug} href={`/${category.slug}`} className="block rounded-xl px-4 py-2.5 text-sm text-[#5f535f] transition hover:bg-[#f7eef5] hover:text-[#70528f]">{category.shortTitle}</Link>)}</div></div>
           {links.slice(2).map((link) => <Link key={link.href} href={link.href} className="transition hover:text-[#8f6bb8]">{link.label}</Link>)}
         </nav>
 
         <div className="flex items-center gap-2"><SearchButton /><a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25d366] px-4 py-3 text-[12px] font-bold text-white shadow-lg shadow-[#25d366]/20 transition hover:-translate-y-0.5 hover:bg-[#1fbd5b]"><WhatsAppIcon className="h-4 w-4" /><span>Sipariş Ver</span></a><button type="button" onClick={() => setMenuOpen((current) => !current)} className="mobile-menu-toggle xl:hidden" aria-label="Menüyü aç veya kapat" aria-expanded={menuOpen}><span /><span /><span /></button></div>
       </div>
 
-      {menuOpen ? <nav className="mobile-menu xl:hidden" aria-label="Mobil menü">{links.map((link) => <Link key={link.href} href={link.href} onClick={closeMenu}>{link.label}</Link>)}<div className="mobile-menu-categories"><p>Kategoriler</p>{productCategories.map((category) => <Link key={category.slug} href={`/${category.slug}`} onClick={closeMenu}>{category.shortTitle}</Link>)}</div></nav> : null}
+      {menuOpen ? <nav className="mobile-menu xl:hidden" aria-label="Mobil menü">{links.map((link) => <Link key={link.href} href={link.href} onClick={closeMenu}>{link.label}</Link>)}<div className="mobile-menu-categories"><p>Modeller</p>{productCategories.map((category) => <Link key={category.slug} href={`/${category.slug}`} onClick={closeMenu}>{category.shortTitle}</Link>)}</div></nav> : null}
     </header>
   );
 }

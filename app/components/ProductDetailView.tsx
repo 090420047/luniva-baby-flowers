@@ -63,7 +63,7 @@ export function ProductDetailView({ product }: { product: ProductItem }) {
 
             <div className="product-detail-notes mt-9">
               <div>
-                <span>{"Kategoriler"}</span>
+                <span>{"Model grupları"}</span>
                 <p>{categories.map((category) => category.title).join(" \u2022 ")}</p>
               </div>
               {product.dimensions ? (

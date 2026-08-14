@@ -61,7 +61,7 @@ export function InfoPageView({ page }: { page: InfoPageContent }) {
                   </p>
                 ))}
                 {isOrderPage && index === 0 ? (
-                  <Link href="/kategoriler" className="order-models-button">
+                  <Link href="/modeller" className="order-models-button">
                     Modelleri Gör <span aria-hidden="true">→</span>
                   </Link>
                 ) : null}
