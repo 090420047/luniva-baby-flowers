@@ -16,6 +16,7 @@ export function ProductDetailView({ product }: { product: ProductItem }) {
   const nextProduct = categoryProducts[(categoryIndex + 1) % categoryProducts.length];
   const previousProductIndex = productItems.indexOf(previousProduct);
   const nextProductIndex = productItems.indexOf(nextProduct);
+  const productIndex = productItems.indexOf(product);
 
   return (
     <main className="min-h-screen bg-[#fffaf8] text-[#2d2430]">
@@ -87,7 +88,7 @@ export function ProductDetailView({ product }: { product: ProductItem }) {
               </div>
             </div>
 
-            <ProductWhatsAppButton productName={product.title} />
+            <ProductWhatsAppButton productName={product.title} productPath={`/urun/${productIndex}`} />
           </div>
         </div>
 

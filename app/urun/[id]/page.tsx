@@ -10,7 +10,17 @@ export function generateStaticParams() { return productItems.map((_, id) => ({ i
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const product = productItems[Number(id)];
-  return product ? { title: `${product.title} | ${siteName}`, description: product.summary } : { title: siteName };
+  return product
+    ? {
+        title: `${product.title} | ${siteName}`,
+        description: product.summary,
+        openGraph: {
+          title: `${product.title} | ${siteName}`,
+          description: product.summary,
+          images: [{ url: product.image, alt: product.title }],
+        },
+      }
+    : { title: siteName };
 }
 
 export default async function ProductPage({ params }: PageProps) {

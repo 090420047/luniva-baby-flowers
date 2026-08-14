@@ -60,6 +60,11 @@ export function InfoPageView({ page }: { page: InfoPageContent }) {
                     {paragraph}
                   </p>
                 ))}
+                {isOrderPage && index === 0 ? (
+                  <Link href="/kategoriler" className="order-models-button">
+                    Modelleri Gör <span aria-hidden="true">→</span>
+                  </Link>
+                ) : null}
                 {(isContactPage || isInstagramPage) && section.title === "Instagram" ? <a href={instagramHref} target="_blank" rel="noopener noreferrer" className="contact-map-link">@{instagramUsername} hesabını aç →</a> : null}
                 {isContactPage && section.title === "E-posta" ? <a href={mailtoHref} className="contact-map-link">{contactEmail} adresine mail gönder →</a> : null}
                 {isContactPage && section.title === "Adres" ? <a href="https://www.google.com/maps/search/?api=1&query=Melik%C5%9Fah%20Mahallesi%20H%C3%BCy%C3%BCkl%C3%BC%20Sokak%20No%3A%2019%2FB%20Meram%20Konya" target="_blank" rel="noopener noreferrer" className="contact-map-link">Haritada yol tarifi al →</a> : null}

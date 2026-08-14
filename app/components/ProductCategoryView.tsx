@@ -100,7 +100,7 @@ export function ProductCategoryView({ slug }: { slug: ProductCategorySlug }) {
                       <span>{"\u00dcr\u00fcn detaylar\u0131"}</span>
                       <span aria-hidden="true" className="grid h-7 w-7 place-items-center rounded-full bg-white/20 text-base transition duration-300 group-hover/detail:translate-x-1 group-hover/detail:bg-white group-hover/detail:text-[#70528f]">→</span>
                     </Link>
-                    <ProductWhatsAppButton productName={item.title} compact />
+                    <ProductWhatsAppButton productName={item.title} productPath={`/urun/${productItems.indexOf(item)}`} compact />
                   </div>
                 </div>
               </article>
